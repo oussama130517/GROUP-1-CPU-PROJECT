@@ -1,0 +1,9 @@
+set circuit1 [readnet spice /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/68-magic-spiceextraction/CPU_TOP.spice]
+set circuit2 [readnet verilog /dev/null]
+puts "Reading SPICE netlist file '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice'..."
+readnet spice /home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice $circuit2
+puts "Reading SPICE netlist file '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/spice/sg13g2_io.spi'..."
+readnet spice /home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/spice/sg13g2_io.spi $circuit2
+puts "Reading Verilog netlist file '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/52-openroad-fillinsertion/CPU_TOP.pnl.v'..."
+readnet verilog /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/52-openroad-fillinsertion/CPU_TOP.pnl.v $circuit2
+lvs "$circuit1 CPU_TOP" "$circuit2 CPU_TOP" /nix/store/4ih3gsigr3b9bd23wa17npi2ivyrcbnd-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/netgen/setup.tcl /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/70-netgen-lvs/reports/lvs.netgen.rpt -blackbox -json

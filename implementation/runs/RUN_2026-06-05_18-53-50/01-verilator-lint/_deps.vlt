@@ -1,0 +1,7 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/485bb5ff96dd449a86282e24e2139ecf.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/485bb5ff96dd449a86282e24e2139ecf.bb.v"
+lint_off -rule UNDRIVEN -file "/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/21a4ac802feb410397534a7418390335.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/21a4ac802feb410397534a7418390335.bb.v"

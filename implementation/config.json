@@ -1,0 +1,28 @@
+{
+  "DESIGN_NAME": "CPU_TOP",
+  "VERILOG_FILES": [
+    "dir::cpu_top.v",
+    "dir::program_counter.v",
+    "dir::control_unit.v",
+    "dir::register.v",
+    "dir::alu.v",
+    "dir::flags_register.v",
+    "dir::branch_logic.v",
+    "dir::sign_extend.v",
+    "dir::instruction_memory.v",
+    "dir::data_memory.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10,
+  "FP_CORE_UTIL": 40,
+  "PL_TARGET_DENSITY": 0.4,
+  "SYNTH_STRATEGY": "AREA 0",
+  "PDK": "ihp-sg13g2"
+}
+
+
+
+
+
+
+

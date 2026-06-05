@@ -1,0 +1,48 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1778926993" />
+    <testcase name="test_add_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="66" time="0.003109455108642578" sim_time_ns="2.0" ratio_time="643.1995092777181" />
+    <testcase name="test_add_carry" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="72" time="0.0004887580871582031" sim_time_ns="2.0000000000000004" ratio_time="4092.0039024390253" />
+    <testcase name="test_add_overflow_positive" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="78" time="0.0005712509155273438" sim_time_ns="2.0" ratio_time="3501.0884808013357" />
+    <testcase name="test_add_overflow_negative" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="84" time="0.0004487037658691406" sim_time_ns="2.0" ratio_time="4457.283740701381" />
+    <testcase name="test_add_zero_result" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="90" time="0.0004324913024902344" sim_time_ns="2.0" ratio_time="4624.370452039691" />
+    <testcase name="test_sub_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="99" time="0.0004253387451171875" sim_time_ns="2.0" ratio_time="4702.134529147982" />
+    <testcase name="test_sub_borrow" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="105" time="0.0004405975341796875" sim_time_ns="2.0" ratio_time="4539.290043290043" />
+    <testcase name="test_sub_zero" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="111" time="0.000457763671875" sim_time_ns="2.0000000000000018" ratio_time="4369.06666666667" />
+    <testcase name="test_sub_overflow" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="117" time="0.0004031658172607422" sim_time_ns="2.0" ratio_time="4960.738024837375" />
+    <testcase name="test_sub_pos_minus_neg_overflow" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="123" time="0.0004012584686279297" sim_time_ns="2.0" ratio_time="4984.3184789067145" />
+    <testcase name="test_neg_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="132" time="0.0004105567932128906" sim_time_ns="2.0" ratio_time="4871.433217189315" />
+    <testcase name="test_neg_zero" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="138" time="0.00039768218994140625" sim_time_ns="2.0" ratio_time="5029.141486810551" />
+    <testcase name="test_neg_min" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="144" time="0.00026679039001464844" sim_time_ns="2.0" ratio_time="7496.521894548704" />
+    <testcase name="test_inc_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="153" time="0.0003514289855957031" sim_time_ns="2.0" ratio_time="5691.050203527815" />
+    <testcase name="test_inc_carry" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="159" time="0.00035452842712402344" sim_time_ns="2.0" ratio_time="5641.296570275723" />
+    <testcase name="test_inc_overflow" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="165" time="0.0002655982971191406" sim_time_ns="2.0" ratio_time="7530.168761220826" />
+    <testcase name="test_dec_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="174" time="0.0002586841583251953" sim_time_ns="2.0" ratio_time="7731.435944700461" />
+    <testcase name="test_dec_borrow" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="180" time="0.00023603439331054688" sim_time_ns="2.0" ratio_time="8473.341414141414" />
+    <testcase name="test_dec_overflow" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="186" time="0.00022029876708984375" sim_time_ns="2.0" ratio_time="9078.580086580087" />
+    <testcase name="test_dec_to_zero" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="192" time="0.00019359588623046875" sim_time_ns="2.0" ratio_time="10330.79802955665" />
+    <testcase name="test_and_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="201" time="0.00019669532775878906" sim_time_ns="2.0" ratio_time="10168.009696969697" />
+    <testcase name="test_and_zero" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="206" time="0.0001926422119140625" sim_time_ns="2.0" ratio_time="10381.940594059406" />
+    <testcase name="test_and_all_ones" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="212" time="0.0002124309539794922" sim_time_ns="2.0" ratio_time="9414.823793490461" />
+    <testcase name="test_or_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="221" time="0.00019788742065429688" sim_time_ns="2.0" ratio_time="10106.756626506025" />
+    <testcase name="test_or_with_zero" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="226" time="0.00019860267639160156" sim_time_ns="2.0" ratio_time="10070.357743097238" />
+    <testcase name="test_xor_same" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="235" time="0.00020503997802734375" sim_time_ns="2.0" ratio_time="9754.19534883721" />
+    <testcase name="test_xor_basic" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="241" time="0.00016498565673828125" sim_time_ns="2.0" ratio_time="12122.265895953757" />
+    <testcase name="test_xor_with_zero" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="246" time="0.00015664100646972656" sim_time_ns="2.0" ratio_time="12768.048706240486" />
+    <testcase name="test_not_zero" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="255" time="0.00016951560974121094" sim_time_ns="2.0" ratio_time="11798.323488045007" />
+    <testcase name="test_not_all_ones" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="261" time="0.00021648406982421875" sim_time_ns="2.0" ratio_time="9238.555066079296" />
+    <testcase name="test_not_pattern" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="267" time="0.0002231597900390625" sim_time_ns="2.0" ratio_time="8962.188034188035" />
+    <testcase name="test_rlc_cin0" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="275" time="0.0002353191375732422" sim_time_ns="2.000000000000007" ratio_time="8499.096251266494" />
+    <testcase name="test_rlc_cin1" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="282" time="0.000164031982421875" sim_time_ns="2.0" ratio_time="12192.744186046511" />
+    <testcase name="test_rlc_zero_in_zero_out" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="289" time="0.00016069412231445312" sim_time_ns="2.0" ratio_time="12446.005934718101" />
+    <testcase name="test_rrc_cin1" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="298" time="0.0001690387725830078" sim_time_ns="2.0" ratio_time="11831.605077574048" />
+    <testcase name="test_rrc_cin0" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="305" time="0.00014495849609375" sim_time_ns="2.0" ratio_time="13797.052631578947" />
+    <testcase name="test_rrc_lsb_to_carry" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="312" time="0.00014352798461914062" sim_time_ns="2.0" ratio_time="13934.564784053156" />
+    <testcase name="test_setc" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="322" time="0.00014472007751464844" sim_time_ns="2.0" ratio_time="13819.782537067545" />
+    <testcase name="test_clrc" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="328" time="0.0001437664031982422" sim_time_ns="2.0" ratio_time="13911.456053067994" />
+    <testcase name="test_setc_zero_input" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="334" time="0.00024127960205078125" sim_time_ns="2.0" ratio_time="8289.138339920948" />
+    <testcase name="test_default_sel" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="343" time="0.00034427642822265625" sim_time_ns="6.0" ratio_time="17427.85595567867" />
+    <testcase name="test_n_flag_set" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="353" time="0.0001518726348876953" sim_time_ns="2.0" ratio_time="13168.929356357929" />
+    <testcase name="test_z_and_n_mutually_exclusive" classname="test_alu_32" file="/home/user/alu_1/test_alu_32.py" lineno="359" time="0.0001506805419921875" sim_time_ns="2.0" ratio_time="13273.113924050633" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,12 @@
+- cell: CPU_TOP
+  inout: []
+  input:
+  - io_addr[0]
+  - io_addr[1]
+  - io_addr[2]
+  - io_addr[3]
+  - io_addr[4]
+  - io_addr[5]
+  - io_addr[6]
+  - io_addr[7]
+  output: []

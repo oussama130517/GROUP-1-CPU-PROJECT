@@ -1,0 +1,14 @@
+Total number of Clock Roots: 1.
+Total number of Buffers Inserted: 29.
+Total number of Clock Subnets: 29.
+Total number of Sinks: 260.
+Cells used:
+  sg13g2_buf_16: 5
+  sg13g2_buf_8: 24
+Dummys used:
+  sg13g2_buf_8: 2
+  sg13g2_inv_1: 3
+  sg13g2_inv_16: 1
+  sg13g2_inv_2: 6
+  sg13g2_inv_4: 3
+  sg13g2_inv_8: 2

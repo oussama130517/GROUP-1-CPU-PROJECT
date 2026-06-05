@@ -1,0 +1,1727 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+
+1. Executing Liberty frontend: /home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+Imported 84 cell types from liberty file.
+
+2. Executing Liberty frontend: /home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib
+Imported 15 cell types from liberty file.
+[INFO] Using SDC file '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
+
+3. Executing Verilog-2005 frontend: /home/user/cpu_project/cpu_top.v
+Parsing SystemVerilog input from `/home/user/cpu_project/cpu_top.v' to AST representation.
+Storing AST representation for module `$abstract\CPU_TOP'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/user/cpu_project/program_counter.v
+Parsing SystemVerilog input from `/home/user/cpu_project/program_counter.v' to AST representation.
+Storing AST representation for module `$abstract\PROGRAM_COUNTER'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/user/cpu_project/control_unit.v
+Parsing SystemVerilog input from `/home/user/cpu_project/control_unit.v' to AST representation.
+Storing AST representation for module `$abstract\CONTROL_UNIT'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/user/cpu_project/register.v
+Parsing SystemVerilog input from `/home/user/cpu_project/register.v' to AST representation.
+Storing AST representation for module `$abstract\REG_FILE'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/user/cpu_project/alu.v
+Parsing SystemVerilog input from `/home/user/cpu_project/alu.v' to AST representation.
+Storing AST representation for module `$abstract\ALU_32'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/user/cpu_project/flags_register.v
+Parsing SystemVerilog input from `/home/user/cpu_project/flags_register.v' to AST representation.
+Storing AST representation for module `$abstract\FLAGS_REGISTER'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/user/cpu_project/branch_logic.v
+Parsing SystemVerilog input from `/home/user/cpu_project/branch_logic.v' to AST representation.
+Storing AST representation for module `$abstract\BRANCH_LOGIC'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/user/cpu_project/sign_extend.v
+Parsing SystemVerilog input from `/home/user/cpu_project/sign_extend.v' to AST representation.
+Storing AST representation for module `$abstract\SIGN_EXTEND'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/user/cpu_project/instruction_memory.v
+Parsing SystemVerilog input from `/home/user/cpu_project/instruction_memory.v' to AST representation.
+Storing AST representation for module `$abstract\INSTRUCTION_MEMORY'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/user/cpu_project/data_memory.v
+Parsing SystemVerilog input from `/home/user/cpu_project/data_memory.v' to AST representation.
+Storing AST representation for module `$abstract\DATA_MEMORY'.
+Successfully finished Verilog frontend.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+14. Executing AST frontend in derive mode using pre-parsed AST for module `\CPU_TOP'.
+Generating RTLIL representation for module `\CPU_TOP'.
+
+14.1. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+
+14.2. Executing AST frontend in derive mode using pre-parsed AST for module `\FLAGS_REGISTER'.
+Generating RTLIL representation for module `\FLAGS_REGISTER'.
+
+14.3. Executing AST frontend in derive mode using pre-parsed AST for module `\ALU_32'.
+Generating RTLIL representation for module `\ALU_32'.
+
+14.4. Executing AST frontend in derive mode using pre-parsed AST for module `\SIGN_EXTEND'.
+Generating RTLIL representation for module `\SIGN_EXTEND'.
+
+14.5. Executing AST frontend in derive mode using pre-parsed AST for module `\REG_FILE'.
+Generating RTLIL representation for module `\REG_FILE'.
+Warning: Replacing memory \regs with list of registers. See /home/user/cpu_project/register.v:34
+
+14.6. Executing AST frontend in derive mode using pre-parsed AST for module `\CONTROL_UNIT'.
+Generating RTLIL representation for module `\CONTROL_UNIT'.
+
+14.7. Executing AST frontend in derive mode using pre-parsed AST for module `\BRANCH_LOGIC'.
+Generating RTLIL representation for module `\BRANCH_LOGIC'.
+
+14.8. Executing AST frontend in derive mode using pre-parsed AST for module `\PROGRAM_COUNTER'.
+Generating RTLIL representation for module `\PROGRAM_COUNTER'.
+
+14.9. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+Used module:     \FLAGS_REGISTER
+Used module:     \ALU_32
+Used module:     \SIGN_EXTEND
+Used module:     \REG_FILE
+Used module:     \CONTROL_UNIT
+Used module:     \BRANCH_LOGIC
+Used module:     \PROGRAM_COUNTER
+
+14.10. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+Used module:     \FLAGS_REGISTER
+Used module:     \ALU_32
+Used module:     \SIGN_EXTEND
+Used module:     \REG_FILE
+Used module:     \CONTROL_UNIT
+Used module:     \BRANCH_LOGIC
+Used module:     \PROGRAM_COUNTER
+Removing unused module `$abstract\DATA_MEMORY'.
+Removing unused module `$abstract\INSTRUCTION_MEMORY'.
+Removing unused module `$abstract\SIGN_EXTEND'.
+Removing unused module `$abstract\BRANCH_LOGIC'.
+Removing unused module `$abstract\FLAGS_REGISTER'.
+Removing unused module `$abstract\ALU_32'.
+Removing unused module `$abstract\REG_FILE'.
+Removing unused module `$abstract\CONTROL_UNIT'.
+Removing unused module `$abstract\PROGRAM_COUNTER'.
+Removing unused module `$abstract\CPU_TOP'.
+Removed 10 unused modules.
+Renaming module CPU_TOP to CPU_TOP.
+
+15. Executing ATTRMAP pass (move or copy attributes).
+
+16. Executing TRIBUF pass.
+
+17. Executing HIERARCHY pass (managing design hierarchy).
+
+17.1. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+Used module:     \FLAGS_REGISTER
+Used module:     \ALU_32
+Used module:     \SIGN_EXTEND
+Used module:     \REG_FILE
+Used module:     \CONTROL_UNIT
+Used module:     \BRANCH_LOGIC
+Used module:     \PROGRAM_COUNTER
+
+17.2. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+Used module:     \FLAGS_REGISTER
+Used module:     \ALU_32
+Used module:     \SIGN_EXTEND
+Used module:     \REG_FILE
+Used module:     \CONTROL_UNIT
+Used module:     \BRANCH_LOGIC
+Used module:     \PROGRAM_COUNTER
+Removed 0 unused modules.
+
+18. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+19. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/home/user/cpu_project/register.v:42$75 in module REG_FILE.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/register.v:42$75 in module REG_FILE.
+Removed 1 dead cases from process $proc$/home/user/cpu_project/register.v:41$72 in module REG_FILE.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/register.v:41$72 in module REG_FILE.
+Marked 3 switch rules as full_case in process $proc$/home/user/cpu_project/register.v:31$59 in module REG_FILE.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/alu.v:47$21 in module ALU_32.
+Marked 3 switch rules as full_case in process $proc$/home/user/cpu_project/flags_register.v:33$19 in module FLAGS_REGISTER.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/control_unit.v:84$78 in module CONTROL_UNIT.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/program_counter.v:44$85 in module PROGRAM_COUNTER.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/program_counter.v:32$82 in module PROGRAM_COUNTER.
+Removed a total of 2 dead cases.
+
+20. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 24 assignments to connections.
+
+21. Executing PROC_INIT pass (extract init attributes).
+
+22. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+Found async reset \rst in `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+Found async reset \rst in `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+
+23. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+24. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+     1/1: $1$mem2reg_rd$\regs$/home/user/cpu_project/register.v:42$58_DATA[31:0]$77
+Creating decoders for process `\REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+     1/1: $1$mem2reg_rd$\regs$/home/user/cpu_project/register.v:41$57_DATA[31:0]$74
+Creating decoders for process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+     1/13: $2$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_ADDR[2:0]$66
+     2/13: $2$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_DATA[31:0]$67
+     3/13: $1$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_DATA[31:0]$63
+     4/13: $1$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_ADDR[2:0]$62
+     5/13: $1\i[31:0]
+     6/13: $0\regs[7][31:0]
+     7/13: $0\regs[6][31:0]
+     8/13: $0\regs[5][31:0]
+     9/13: $0\regs[4][31:0]
+    10/13: $0\regs[3][31:0]
+    11/13: $0\regs[2][31:0]
+    12/13: $0\regs[1][31:0]
+    13/13: $0\regs[0][31:0]
+Creating decoders for process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+     1/4: $1\V_flag[0:0]
+     2/4: $1\C_out[0:0]
+     3/4: $1\Result[31:0]
+     4/4: $1\Res33[32:0]
+Creating decoders for process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+     1/4: $0\V_flag[0:0]
+     2/4: $0\C_flag[0:0]
+     3/4: $0\Z_flag[0:0]
+     4/4: $0\N_flag[0:0]
+Creating decoders for process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+     1/14: $1\REG_WR[0:0]
+     2/14: $1\ALU_SEL[3:0]
+     3/14: $1\IO_WR[0:0]
+     4/14: $1\IO_RD[0:0]
+     5/14: $1\CLRC_EN[0:0]
+     6/14: $1\SETC_EN[0:0]
+     7/14: $1\BRANCH_EN[0:0]
+     8/14: $1\PC_SEL[2:0]
+     9/14: $1\POP_EN[0:0]
+    10/14: $1\PUSH_EN[0:0]
+    11/14: $1\MEM_SRC[0:0]
+    12/14: $1\MEM_WR[0:0]
+    13/14: $1\MEM_RD[0:0]
+    14/14: $1\IMM_SEL[0:0]
+Creating decoders for process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+     1/1: $0\pc_current[31:0]
+Creating decoders for process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+     1/1: $1\pc_next[31:0]
+
+25. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\REG_FILE.$mem2reg_rd$\regs$/home/user/cpu_project/register.v:42$58_DATA' from process `\REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+No latch inferred for signal `\REG_FILE.$mem2reg_rd$\regs$/home/user/cpu_project/register.v:41$57_DATA' from process `\REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+No latch inferred for signal `\ALU_32.\V_flag' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\Result' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\C_out' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\Res33' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\CONTROL_UNIT.\ALU_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IMM_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\REG_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_RD' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_SRC' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\PUSH_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\POP_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\PC_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\BRANCH_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\SETC_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\CLRC_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IO_RD' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IO_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\PROGRAM_COUNTER.\pc_next' from process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+
+26. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\REG_FILE.\i' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$471' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[0]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$474' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[1]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$477' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[2]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$480' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[3]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$483' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[4]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$486' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[5]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$489' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[6]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$492' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[7]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$495' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_ADDR' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$498' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_DATA' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$501' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\N_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$504' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\Z_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$507' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\C_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$510' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\V_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$513' with positive edge clock and positive level reset.
+Creating register for signal `\PROGRAM_COUNTER.\pc_current' using process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+  created $adff cell `$procdff$516' with positive edge clock and positive level reset.
+
+27. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+28. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+Removing empty process `REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+Found and cleaned up 1 empty switch in `\REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+Removing empty process `REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+Found and cleaned up 2 empty switches in `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+Removing empty process `REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+Found and cleaned up 1 empty switch in `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+Removing empty process `ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+Found and cleaned up 3 empty switches in `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+Removing empty process `FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+Found and cleaned up 1 empty switch in `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+Removing empty process `CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+Removing empty process `PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+Found and cleaned up 1 empty switch in `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+Removing empty process `PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+Cleaned up 10 empty switches.
+
+29. Executing CHECK pass (checking for obvious problems).
+Checking module CPU_TOP...
+Checking module REG_FILE...
+Checking module SIGN_EXTEND...
+Checking module ALU_32...
+Checking module FLAGS_REGISTER...
+Checking module CONTROL_UNIT...
+Checking module PROGRAM_COUNTER...
+Checking module BRANCH_LOGIC...
+Found and reported 0 problems.
+
+30. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+Optimizing module REG_FILE.
+<suppressed ~17 debug messages>
+Optimizing module SIGN_EXTEND.
+Optimizing module ALU_32.
+<suppressed ~5 debug messages>
+Optimizing module FLAGS_REGISTER.
+<suppressed ~4 debug messages>
+Optimizing module CONTROL_UNIT.
+Optimizing module PROGRAM_COUNTER.
+<suppressed ~1 debug messages>
+Optimizing module BRANCH_LOGIC.
+
+31. Executing FLATTEN pass (flatten design).
+Deleting now unused module REG_FILE.
+Deleting now unused module SIGN_EXTEND.
+Deleting now unused module ALU_32.
+Deleting now unused module FLAGS_REGISTER.
+Deleting now unused module CONTROL_UNIT.
+Deleting now unused module PROGRAM_COUNTER.
+Deleting now unused module BRANCH_LOGIC.
+<suppressed ~7 debug messages>
+
+32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+33. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 12 unused cells and 148 unused wires.
+<suppressed ~17 debug messages>
+
+34. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+35. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 250 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 192 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+<suppressed ~174 debug messages>
+Removed a total of 58 cells.
+
+36. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 8/9 on $pmux $flatten\u_regfile.$procmux$86.
+    dead port 8/9 on $pmux $flatten\u_regfile.$procmux$95.
+Removed 2 multiplexer ports.
+<suppressed ~119 debug messages>
+
+37. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$267: $auto$opt_reduce.cc:137:opt_pmux$525
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$298: { $flatten\u_control.$procmux$284_CMP $flatten\u_control.$procmux$283_CMP $flatten\u_control.$procmux$282_CMP $flatten\u_control.$procmux$281_CMP $flatten\u_control.$procmux$280_CMP $flatten\u_control.$procmux$279_CMP $flatten\u_control.$procmux$305_CMP $flatten\u_control.$procmux$304_CMP $flatten\u_control.$procmux$277_CMP $flatten\u_control.$procmux$276_CMP $flatten\u_control.$procmux$275_CMP $auto$opt_reduce.cc:137:opt_pmux$527 }
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$382: { $flatten\u_control.$procmux$390_CMP $flatten\u_control.$procmux$389_CMP $flatten\u_control.$procmux$388_CMP $flatten\u_control.$procmux$387_CMP $flatten\u_control.$procmux$273_CMP $auto$opt_reduce.cc:137:opt_pmux$529 }
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$402: { $auto$opt_reduce.cc:137:opt_pmux$531 $flatten\u_control.$procmux$385_CMP $flatten\u_control.$procmux$384_CMP $flatten\u_control.$procmux$383_CMP }
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$415: $auto$opt_reduce.cc:137:opt_pmux$533
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$423: $auto$opt_reduce.cc:137:opt_pmux$535
+    New ctrl vector for $pmux cell $flatten\u_alu.$procmux$205: { $flatten\u_alu.$procmux$192_CMP $flatten\u_alu.$procmux$191_CMP $flatten\u_alu.$procmux$190_CMP $flatten\u_alu.$procmux$189_CMP $flatten\u_alu.$procmux$188_CMP $flatten\u_alu.$procmux$213_CMP $flatten\u_alu.$procmux$212_CMP $flatten\u_alu.$procmux$211_CMP $flatten\u_alu.$procmux$210_CMP $flatten\u_alu.$procmux$198_CMP $flatten\u_alu.$procmux$197_CMP $auto$opt_reduce.cc:137:opt_pmux$537 }
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$441: $auto$opt_reduce.cc:137:opt_pmux$539
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$449: $auto$opt_reduce.cc:137:opt_pmux$541
+    New ctrl vector for $pmux cell $flatten\u_control.$procmux$460: $auto$opt_reduce.cc:137:opt_pmux$543
+    New ctrl vector for $pmux cell $flatten\u_pc.$procmux$464: { $flatten\u_pc.$procmux$468_CMP $flatten\u_pc.$procmux$467_CMP }
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 11 changes.
+
+38. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 202 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 200 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+39. Executing OPT_DFF pass (perform DFF optimizations).
+
+40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 6 unused cells and 66 unused wires.
+<suppressed ~8 debug messages>
+
+41. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+42. Rerunning OPT passes. (Maybe there is more to do…)
+
+43. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~113 debug messages>
+
+44. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+    New ctrl vector for $pmux cell $flatten\u_alu.$procmux$187: { $flatten\u_alu.$procmux$192_CMP $flatten\u_alu.$procmux$191_CMP $flatten\u_alu.$procmux$189_CMP $auto$opt_reduce.cc:137:opt_pmux$545 }
+    New ctrl vector for $pmux cell $flatten\u_pc.$procmux$464: $auto$opt_reduce.cc:137:opt_pmux$547
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 2 changes.
+
+45. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 196 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+46. Executing OPT_DFF pass (perform DFF optimizations).
+
+47. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+48. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+49. Rerunning OPT passes. (Maybe there is more to do…)
+
+50. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~111 debug messages>
+
+51. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+52. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 196 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+53. Executing OPT_DFF pass (perform DFF optimizations).
+
+54. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+55. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+56. Executing FSM pass (extract and optimize FSM).
+
+56.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+56.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+56.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+56.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+56.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+56.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+56.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+56.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+57. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+58. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 196 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+59. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~111 debug messages>
+
+60. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 196 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+62. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\u_regfile.$procdff$495 ($adff) from module CPU_TOP (D = \u_regfile.rd_data, Q = \u_regfile.regs[7]).
+Adding EN signal on $flatten\u_regfile.$procdff$492 ($adff) from module CPU_TOP (D = \u_regfile.rd_data, Q = \u_regfile.regs[6]).
+Adding EN signal on $flatten\u_regfile.$procdff$489 ($adff) from module CPU_TOP (D = \u_regfile.rd_data, Q = \u_regfile.regs[5]).
+Adding EN signal on $flatten\u_regfile.$procdff$486 ($adff) from module CPU_TOP (D = \u_regfile.rd_data, Q = \u_regfile.regs[4]).
+Adding EN signal on $flatten\u_regfile.$procdff$483 ($adff) from module CPU_TOP (D = \u_regfile.rd_data, Q = \u_regfile.regs[3]).
+Adding EN signal on $flatten\u_regfile.$procdff$480 ($adff) from module CPU_TOP (D = \u_regfile.rd_data, Q = \u_regfile.regs[2]).
+Adding EN signal on $flatten\u_regfile.$procdff$477 ($adff) from module CPU_TOP (D = \u_regfile.rd_data, Q = \u_regfile.regs[1]).
+Adding EN signal on $flatten\u_flags.$procdff$513 ($adff) from module CPU_TOP (D = \u_flags.V_in, Q = \u_flags.V_flag).
+Adding EN signal on $flatten\u_flags.$procdff$510 ($adff) from module CPU_TOP (D = $flatten\u_flags.$0\C_flag[0:0], Q = \u_flags.C_flag).
+Adding EN signal on $flatten\u_flags.$procdff$507 ($adff) from module CPU_TOP (D = \u_flags.Z_in, Q = \u_flags.Z_flag).
+Adding EN signal on $flatten\u_flags.$procdff$504 ($adff) from module CPU_TOP (D = \u_alu.Result [31], Q = \u_flags.N_flag).
+
+63. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 23 unused cells and 23 unused wires.
+<suppressed ~24 debug messages>
+
+64. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+<suppressed ~1 debug messages>
+
+65. Rerunning OPT passes. (Maybe there is more to do…)
+
+66. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~58 debug messages>
+
+67. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+68. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 190 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 186 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 184 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+69. Executing OPT_DFF pass (perform DFF optimizations).
+
+70. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+72. Rerunning OPT passes. (Maybe there is more to do…)
+
+73. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~58 debug messages>
+
+74. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 184 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+76. Executing OPT_DFF pass (perform DFF optimizations).
+
+77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+78. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+79. Executing WREDUCE pass (reducing word size of cells).
+Removed top 29 bits (of 32) from port B of cell CPU_TOP.$add$/home/user/cpu_project/cpu_top.v:46$5 ($add).
+Removed top 29 bits (of 32) from port B of cell CPU_TOP.$sub$/home/user/cpu_project/cpu_top.v:110$6 ($sub).
+Removed top 2 bits (of 3) from port B of cell CPU_TOP.$flatten\u_pc.$procmux$468_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell CPU_TOP.$flatten\u_pc.$procmux$467_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$444_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$443_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$424_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$391_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$390_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$389_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$388_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$387_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$385_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$384_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$383_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$305_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$304_CMP0 ($eq).
+Removed top 5 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$284_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$283_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$282_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$281_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$280_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$279_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$278_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$277_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$276_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$275_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$274_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$273_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$272_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$271_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$270_CMP0 ($eq).
+Removed top 1 bits (of 6) from port B of cell CPU_TOP.$flatten\u_control.$procmux$269_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$163_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$152_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$142_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$102_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$101_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$100_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$93_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$92_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell CPU_TOP.$flatten\u_regfile.$procmux$91_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell CPU_TOP.$flatten\u_alu.$procmux$213_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell CPU_TOP.$flatten\u_alu.$procmux$212_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell CPU_TOP.$flatten\u_alu.$procmux$211_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell CPU_TOP.$flatten\u_alu.$procmux$191_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell CPU_TOP.$flatten\u_alu.$procmux$190_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell CPU_TOP.$flatten\u_alu.$procmux$189_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell CPU_TOP.$flatten\u_alu.$procmux$188_CMP0 ($eq).
+Removed top 1 bits (of 33) from port A of cell CPU_TOP.$flatten\u_alu.$sub$/home/user/cpu_project/alu.v:87$48 ($sub).
+Removed top 32 bits (of 33) from port B of cell CPU_TOP.$flatten\u_alu.$sub$/home/user/cpu_project/alu.v:87$48 ($sub).
+Removed top 1 bits (of 32) from port B of cell CPU_TOP.$flatten\u_alu.$eq$/home/user/cpu_project/alu.v:83$46 ($eq).
+Removed top 1 bits (of 33) from port A of cell CPU_TOP.$flatten\u_alu.$add$/home/user/cpu_project/alu.v:80$45 ($add).
+Removed top 32 bits (of 33) from port B of cell CPU_TOP.$flatten\u_alu.$add$/home/user/cpu_project/alu.v:80$45 ($add).
+Removed top 1 bits (of 33) from port A of cell CPU_TOP.$flatten\u_alu.$add$/home/user/cpu_project/alu.v:73$42 ($add).
+Removed top 32 bits (of 33) from port B of cell CPU_TOP.$flatten\u_alu.$add$/home/user/cpu_project/alu.v:73$42 ($add).
+Removed top 1 bits (of 33) from port A of cell CPU_TOP.$flatten\u_alu.$sub$/home/user/cpu_project/alu.v:65$31 ($sub).
+Removed top 1 bits (of 33) from port B of cell CPU_TOP.$flatten\u_alu.$sub$/home/user/cpu_project/alu.v:65$31 ($sub).
+Removed top 1 bits (of 33) from port A of cell CPU_TOP.$flatten\u_alu.$add$/home/user/cpu_project/alu.v:57$22 ($add).
+Removed top 1 bits (of 33) from port B of cell CPU_TOP.$flatten\u_alu.$add$/home/user/cpu_project/alu.v:57$22 ($add).
+
+80. Executing PEEPOPT pass (run peephole optimizers).
+
+81. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+82. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module CPU_TOP:
+  creating $macc model for $add$/home/user/cpu_project/cpu_top.v:46$5 ($add).
+  creating $macc model for $flatten\u_alu.$add$/home/user/cpu_project/alu.v:57$22 ($add).
+  creating $macc model for $flatten\u_alu.$add$/home/user/cpu_project/alu.v:73$42 ($add).
+  creating $macc model for $flatten\u_alu.$add$/home/user/cpu_project/alu.v:80$45 ($add).
+  creating $macc model for $flatten\u_alu.$sub$/home/user/cpu_project/alu.v:65$31 ($sub).
+  creating $macc model for $flatten\u_alu.$sub$/home/user/cpu_project/alu.v:87$48 ($sub).
+  creating $macc model for $flatten\u_branch.$add$/home/user/cpu_project/branch_logic.v:21$81 ($add).
+  creating $macc model for $sub$/home/user/cpu_project/cpu_top.v:110$6 ($sub).
+  creating $alu model for $macc $sub$/home/user/cpu_project/cpu_top.v:110$6.
+  creating $alu model for $macc $flatten\u_branch.$add$/home/user/cpu_project/branch_logic.v:21$81.
+  creating $alu model for $macc $flatten\u_alu.$sub$/home/user/cpu_project/alu.v:87$48.
+  creating $alu model for $macc $flatten\u_alu.$sub$/home/user/cpu_project/alu.v:65$31.
+  creating $alu model for $macc $flatten\u_alu.$add$/home/user/cpu_project/alu.v:80$45.
+  creating $alu model for $macc $flatten\u_alu.$add$/home/user/cpu_project/alu.v:73$42.
+  creating $alu model for $macc $flatten\u_alu.$add$/home/user/cpu_project/alu.v:57$22.
+  creating $alu model for $macc $add$/home/user/cpu_project/cpu_top.v:46$5.
+  creating $alu cell for $add$/home/user/cpu_project/cpu_top.v:46$5: $auto$alumacc.cc:512:replace_alu$593
+  creating $alu cell for $flatten\u_alu.$add$/home/user/cpu_project/alu.v:57$22: $auto$alumacc.cc:512:replace_alu$596
+  creating $alu cell for $flatten\u_alu.$add$/home/user/cpu_project/alu.v:73$42: $auto$alumacc.cc:512:replace_alu$599
+  creating $alu cell for $flatten\u_alu.$add$/home/user/cpu_project/alu.v:80$45: $auto$alumacc.cc:512:replace_alu$602
+  creating $alu cell for $flatten\u_alu.$sub$/home/user/cpu_project/alu.v:65$31: $auto$alumacc.cc:512:replace_alu$605
+  creating $alu cell for $flatten\u_alu.$sub$/home/user/cpu_project/alu.v:87$48: $auto$alumacc.cc:512:replace_alu$608
+  creating $alu cell for $flatten\u_branch.$add$/home/user/cpu_project/branch_logic.v:21$81: $auto$alumacc.cc:512:replace_alu$611
+  creating $alu cell for $sub$/home/user/cpu_project/cpu_top.v:110$6: $auto$alumacc.cc:512:replace_alu$614
+  created 8 $alu and 0 $macc cells.
+
+83. Executing SHARE pass (SAT-based resource sharing).
+
+84. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+85. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 184 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+86. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~58 debug messages>
+
+87. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+88. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 184 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+89. Executing OPT_DFF pass (perform DFF optimizations).
+
+90. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+91. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+92. Executing MEMORY pass.
+
+92.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+92.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+92.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+92.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+92.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+92.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+92.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+92.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+92.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+92.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+93. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+94. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+<suppressed ~19 debug messages>
+
+95. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 172 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+96. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\u_pc.$procdff$516 ($adff) from module CPU_TOP (D = \u_pc.pc_next [1:0], Q = \u_pc.pc_current [1:0]).
+
+97. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 4 unused cells and 18 unused wires.
+<suppressed ~5 debug messages>
+
+98. Rerunning OPT passes (Removed registers in this run.)
+
+99. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+<suppressed ~2 debug messages>
+
+100. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 170 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+101. Executing OPT_DFF pass (perform DFF optimizations).
+
+102. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+103. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+104. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+105. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 170 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+106. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+107. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+108. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 170 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+109. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $pmux $flatten\u_alu.$procmux$187 in front of them:
+        $flatten\u_alu.$eq$/home/user/cpu_project/alu.v:76$43
+        $flatten\u_alu.$eq$/home/user/cpu_project/alu.v:83$46
+
+110. Executing OPT_DFF pass (perform DFF optimizations).
+
+111. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+112. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+<suppressed ~1 debug messages>
+
+113. Rerunning OPT passes. (Maybe there is more to do…)
+
+114. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~34 debug messages>
+
+115. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+    Consolidated identical input bits for $mux cell $auto$opt_share.cc:246:merge_operators$630:
+      Old ports: A=2147483647, B=32'10000000000000000000000000000000, Y=$auto$rtlil.cc:3474:Pmux$631
+      New ports: A=2'01, B=2'10, Y={ $auto$rtlil.cc:3474:Pmux$631 [31] $auto$rtlil.cc:3474:Pmux$631 [0] }
+      New connections: $auto$rtlil.cc:3474:Pmux$631 [30:1] = { $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] $auto$rtlil.cc:3474:Pmux$631 [0] }
+    New ctrl vector for $pmux cell $flatten\u_alu.$procmux$187: { $flatten\u_alu.$procmux$192_CMP $flatten\u_alu.$procmux$191_CMP $auto$opt_reduce.cc:137:opt_pmux$633 }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:131:opt_pmux$632: { $flatten\u_alu.$procmux$188_CMP $flatten\u_alu.$procmux$189_CMP $flatten\u_alu.$procmux$190_CMP }
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 3 changes.
+
+116. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 171 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+117. Executing OPT_SHARE pass.
+
+118. Executing OPT_DFF pass (perform DFF optimizations).
+
+119. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+120. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+121. Rerunning OPT passes. (Maybe there is more to do…)
+
+122. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~34 debug messages>
+
+123. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+124. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 171 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+125. Executing OPT_SHARE pass.
+
+126. Executing OPT_DFF pass (perform DFF optimizations).
+
+127. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+128. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+129. Executing TECHMAP pass (map to technology primitives).
+
+129.1. Executing Verilog-2005 frontend: /nix/store/f1q0w7rd0a4ny4hqvfxlhs4cmariidcy-yosys-0.62/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/f1q0w7rd0a4ny4hqvfxlhs4cmariidcy-yosys-0.62/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+129.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $adffe.
+Using template $paramod$861f5302217787cd55fd1a501bc728125f176580\_90_alu for cells of type $alu.
+Using template $paramod$44a13d10af618e7fbe7b9aad2f6151ffcee1e2fa\_90_alu for cells of type $alu.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using template $paramod$456cea4c5bfe031f8999cda9de4945293a381748\_90_alu for cells of type $alu.
+Using template $paramod$857150d3a9b7fb38b73bbaa31ff652415e553f98\_90_alu for cells of type $alu.
+Using template $paramod$2f977e2b95964473d0ec1cf89364aa3fefc10e38\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$d31bf4d7d72e59528d18fbd4f322e9d608532043\_90_pmux for cells of type $pmux.
+Using template $paramod$eaeb96106163dbf82031649d189817109fe07c69\_90_pmux for cells of type $pmux.
+Using template $paramod$1898f562910b1a95b1df10dbe7204af73891130f\_90_pmux for cells of type $pmux.
+Using template $paramod$c96def1cdcef2eee3c62e5dfb7ba2dd09c9f74dd\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$ed6389a5938b09f91843a91d67becca5abedb1bd\_90_pmux for cells of type $pmux.
+Using template $paramod$aa21a8cfcdb2d038c61c16c25c37cdf209d597be\_90_pmux for cells of type $pmux.
+Using template $paramod$d629d85c8826a74239b9178d1930215a43b0ceb0\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011110 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011110 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2284 debug messages>
+
+130. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+<suppressed ~2264 debug messages>
+
+131. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 4516 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 4186 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 4093 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 4072 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 4069 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 4068 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+<suppressed ~1344 debug messages>
+Removed a total of 448 cells.
+
+132. Executing OPT_DFF pass (perform DFF optimizations).
+
+133. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 86 unused cells and 1488 unused wires.
+<suppressed ~87 debug messages>
+
+134. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+135. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 3982 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+136. Executing OPT_DFF pass (perform DFF optimizations).
+
+137. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+138. Executing ABC pass (technology mapping using ABC).
+
+138.1. Extracting gate netlist of module `\CPU_TOP' to `<abc-temp-dir>/input.blif'..
+Replacing 4 occurrences of constant undef bits with constant zero bits
+
+138.1.1. Executed ABC.
+Extracted 3715 gates and 4073 wires to a netlist network with 356 inputs and 146 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library /tmp/yosys-abc-r2D1AP/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+138.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       70
+ABC RESULTS:            ANDNOT cells:     1470
+ABC RESULTS:               MUX cells:      351
+ABC RESULTS:              NAND cells:       95
+ABC RESULTS:               NOR cells:      237
+ABC RESULTS:               NOT cells:      217
+ABC RESULTS:                OR cells:      797
+ABC RESULTS:             ORNOT cells:       98
+ABC RESULTS:              XNOR cells:       99
+ABC RESULTS:               XOR cells:      239
+ABC RESULTS:        internal signals:     3571
+ABC RESULTS:           input signals:      356
+ABC RESULTS:          output signals:      146
+Removing temp directory.
+Removing global temp directory.
+
+139. Executing OPT pass (performing simple optimizations).
+
+139.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+139.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 3940 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Computing hashes of 3919 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+<suppressed ~63 debug messages>
+Removed a total of 21 cells.
+
+139.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+139.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 0 unused cells and 1628 unused wires.
+<suppressed ~42 debug messages>
+
+139.5. Finished fast OPT passes.
+
+140. Executing HIERARCHY pass (managing design hierarchy).
+
+140.1. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+
+140.2. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+Removed 0 unused modules.
+
+141. Executing CHECK pass (checking for obvious problems).
+Checking module CPU_TOP...
+Found and reported 0 problems.
+
+142. Printing statistics.
+
+=== CPU_TOP ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     3612 wires
+     4957 wire bits
+       95 public wires
+     1440 public wire bits
+       14 ports
+      238 port bits
+     3919 cells
+     1469   $_ANDNOT_
+       66   $_AND_
+      230   $_DFFE_PP0P_
+       30   $_DFF_PP0_
+      351   $_MUX_
+       86   $_NAND_
+      234   $_NOR_
+      217   $_NOT_
+       98   $_ORNOT_
+      794   $_OR_
+       98   $_XNOR_
+      239   $_XOR_
+        7   $scopeinfo
+
+143. Executing OPT pass (performing simple optimizations).
+
+143.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+143.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 3919 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+143.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \CPU_TOP..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+143.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \CPU_TOP.
+Performed a total of 0 changes.
+
+143.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\CPU_TOP'.
+Computing hashes of 3919 cells of `\CPU_TOP'.
+Finding duplicate cells in `\CPU_TOP'.
+Removed a total of 0 cells.
+
+143.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+143.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+
+143.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+
+143.9. Finished fast OPT passes. (There is nothing left to do.)
+
+144. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 7 unused cells and 65 unused wires.
+<suppressed ~72 debug messages>
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/b54fe3ca5bdb4de99b39b1bbc9bee2d9.lib -liberty /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/9ccd0fff610946faafd61a7c5ca9ae18.lib ",
+   "modules": {
+      "\\CPU_TOP": {
+         "num_wires":         3547,
+         "num_wire_bits":     4050,
+         "num_pub_wires":     30,
+         "num_pub_wire_bits": 533,
+         "num_ports":         14,
+         "num_port_bits":     238,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         3912,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1469,
+            "$_AND_": 66,
+            "$_DFFE_PP0P_": 230,
+            "$_DFF_PP0_": 30,
+            "$_MUX_": 351,
+            "$_NAND_": 86,
+            "$_NOR_": 234,
+            "$_NOT_": 217,
+            "$_ORNOT_": 98,
+            "$_OR_": 794,
+            "$_XNOR_": 98,
+            "$_XOR_": 239
+         }
+      }
+   },
+      "design": {
+         "num_wires":         3547,
+         "num_wire_bits":     4050,
+         "num_pub_wires":     30,
+         "num_pub_wire_bits": 533,
+         "num_ports":         14,
+         "num_port_bits":     238,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         3912,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1469,
+            "$_AND_": 66,
+            "$_DFFE_PP0P_": 230,
+            "$_DFF_PP0_": 30,
+            "$_MUX_": 351,
+            "$_NAND_": 86,
+            "$_NOR_": 234,
+            "$_NOT_": 217,
+            "$_ORNOT_": 98,
+            "$_OR_": 794,
+            "$_XNOR_": 98,
+            "$_XOR_": 239
+         }
+      }
+}
+
+145. Printing statistics.
+
+=== CPU_TOP ===
+
+        +----------Local Count, excluding submodules.
+        | 
+     3547 wires
+     4050 wire bits
+       30 public wires
+      533 public wire bits
+       14 ports
+      238 port bits
+     3912 cells
+     1469   $_ANDNOT_
+       66   $_AND_
+      230   $_DFFE_PP0P_
+       30   $_DFF_PP0_
+      351   $_MUX_
+       86   $_NAND_
+      234   $_NOR_
+      217   $_NOT_
+       98   $_ORNOT_
+      794   $_OR_
+       98   $_XNOR_
+      239   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PP0P_ is unknown!
+   Area for cell type $_DFF_PP0_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v'…
+
+146. Executing TECHMAP pass (map to technology primitives).
+
+146.1. Executing Verilog-2005 frontend: /home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v
+Parsing Verilog input from `/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `$_TBUF_'.
+Successfully finished Verilog frontend.
+
+146.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+147. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v'…
+
+148. Executing TECHMAP pass (map to technology primitives).
+
+148.1. Executing Verilog-2005 frontend: /home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v
+Parsing Verilog input from `/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v' to AST representation.
+Generating RTLIL representation for module `$_DLATCH_P_'.
+Generating RTLIL representation for module `$_DLATCH_PN0_'.
+Generating RTLIL representation for module `$_DLATCH_N_'.
+Generating RTLIL representation for module `$_DLATCH_NN0_'.
+Successfully finished Verilog frontend.
+
+148.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+149. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+150. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sg13g2_dfrbpq_1 (noninv, pins=4, area=48.99) is a direct match for cell type $_DFF_PN0_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    unmapped dff cell: $_DFF_P_
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sg13g2_dfrbpq_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_PN1_
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+150.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~4 debug messages>
+Mapping DFF cells in module `\CPU_TOP':
+  mapped 260 $_DFF_PN0_ cells to \sg13g2_dfrbpq_1 cells.
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/b54fe3ca5bdb4de99b39b1bbc9bee2d9.lib -liberty /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/9ccd0fff610946faafd61a7c5ca9ae18.lib ",
+   "modules": {
+      "\\CPU_TOP": {
+         "num_wires":         4037,
+         "num_wire_bits":     4540,
+         "num_pub_wires":     30,
+         "num_pub_wire_bits": 533,
+         "num_ports":         14,
+         "num_port_bits":     238,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4402,
+         "num_submodules":       0,
+         "area":              12737.088000,
+         "sequential_area":    12737.088000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1469,
+            "$_AND_": 66,
+            "$_MUX_": 581,
+            "$_NAND_": 86,
+            "$_NOR_": 234,
+            "$_NOT_": 477,
+            "$_ORNOT_": 98,
+            "$_OR_": 794,
+            "$_XNOR_": 98,
+            "$_XOR_": 239,
+            "sg13g2_dfrbpq_1": 260
+         }
+      }
+   },
+      "design": {
+         "num_wires":         4037,
+         "num_wire_bits":     4540,
+         "num_pub_wires":     30,
+         "num_pub_wire_bits": 533,
+         "num_ports":         14,
+         "num_port_bits":     238,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         4402,
+         "num_submodules":       0,
+         "area":              12737.088000,
+         "sequential_area":    12737.088000,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 1469,
+            "$_AND_": 66,
+            "$_MUX_": 581,
+            "$_NAND_": 86,
+            "$_NOR_": 234,
+            "$_NOT_": 477,
+            "$_ORNOT_": 98,
+            "$_OR_": 794,
+            "$_XNOR_": 98,
+            "$_XOR_": 239,
+            "sg13g2_dfrbpq_1": 260
+         }
+      }
+}
+
+151. Printing statistics.
+
+=== CPU_TOP ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     4037        - wires
+     4540        - wire bits
+       30        - public wires
+      533        - public wire bits
+       14        - ports
+      238        - port bits
+     4402 1.27E+04 cells
+     1469        -   $_ANDNOT_
+       66        -   $_AND_
+      581        -   $_MUX_
+       86        -   $_NAND_
+      234        -   $_NOR_
+      477        -   $_NOT_
+       98        -   $_ORNOT_
+      794        -   $_OR_
+       98        -   $_XNOR_
+      239        -   $_XOR_
+      260 1.27E+04   sg13g2_dfrbpq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\CPU_TOP': 12737.088000
+     of which used for sequential elements: 12737.088000 (100.00%)
+
+[INFO] Using generated ABC script '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/06-yosys-synthesis/AREA_0.abc'…
+
+152. Executing ABC pass (technology mapping using ABC).
+
+152.1. Extracting gate netlist of module `\CPU_TOP' to `/tmp/yosys-abc-VUnPsB/input.blif'..
+
+152.1.1. Executed ABC.
+Extracted 4142 gates and 4499 wires to a netlist network with 357 inputs and 588 outputs.
+Running ABC script: /tmp/yosys-abc-VUnPsB/abc.script
+ABC: ======== ABC command line "source /tmp/yosys-abc-VUnPsB/abc.script"
+ABC: + read_blif /tmp/yosys-abc-VUnPsB/input.blif 
+ABC: + read_lib -w /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/b54fe3ca5bdb4de99b39b1bbc9bee2d9.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_antennanp" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_decap_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_decap_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbpq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbpq_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhr_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhrq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dllr_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dllrq_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbpq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbpq_2".
+ABC: Library "sg13g2_stdcell_typ_1p20V_25C" from "/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/b54fe3ca5bdb4de99b39b1bbc9bee2d9.lib" has 54 cells (25 skipped: 12 seq; 6 tri-state; 0 no func; 7 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.06 sec
+ABC: Memory =    2.63 MB. Time =     0.06 sec
+ABC: + read_lib -m -w /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/9ccd0fff610946faafd61a7c5ca9ae18.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIOVdd" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIOVss" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIn" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadVdd" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadVss" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadAnalog" due to dont_use attribute.
+ABC: Library "sg13g2_io_typ_1p2V_3p3V_25C" from "/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/9ccd0fff610946faafd61a7c5ca9ae18.lib" has 0 cells (15 skipped: 0 seq; 0 tri-state; 4 no func; 11 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.00 sec
+ABC: Memory =    0.38 MB. Time =     0.00 sec
+ABC: Updated library "sg13g2_stdcell_typ_1p20V_25C" with additional 0 cells from library "sg13g2_io_typ_1p2V_3p3V_25C".
+ABC: + read_constr -v /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sg13g2_buf_4/X".
+ABC: Setting output load to be 6.000000.
+ABC: + source /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sg13g2_buf_4/X) in the library.
+ABC: WireLoad = "none"  Gates =   2637 ( 15.1 %)   Cap =  8.4 ff (  6.0 %)   Area =    26293.79 ( 87.9 %)   Delay =  4655.39 ps  (  3.5 %)               
+ABC: Path  0 --     260 : 0    6 pi              A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  16.7 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --    1060 : 2    6 sg13g2_nand2b_1 A =   9.07  Df = 128.2  -31.9 ps  S = 115.0 ps  Cin =  2.6 ff  Cout =  18.9 ff  Cmax = 300.0 ff  G =  702  
+ABC: Path  2 --    1061 : 2    5 sg13g2_nor2_1   A =   7.26  Df = 285.4 -103.1 ps  S = 152.8 ps  Cin =  3.0 ff  Cout =  15.3 ff  Cmax = 300.0 ff  G =  504  
+ABC: Path  3 --    1063 : 2   28 sg13g2_nand2_1  A =   7.26  Df = 894.9 -306.0 ps  S = 696.6 ps  Cin =  2.9 ff  Cout = 128.3 ff  Cmax = 300.0 ff  G = 4329  
+ABC: Path  4 --    1064 : 2   46 sg13g2_nor2_1   A =   7.26  Df =2046.2 -845.3 ps  S =1181.9 ps  Cin =  3.0 ff  Cout = 139.5 ff  Cmax = 300.0 ff  G = 4599  
+ABC: Path  5 --    1073 : 4    2 sg13g2_nor4_1   A =  10.89  Df =2254.3 -801.3 ps  S = 214.6 ps  Cin =  2.9 ff  Cout =   5.8 ff  Cmax = 300.0 ff  G =  197  
+ABC: Path  6 --    1091 : 4    1 sg13g2_nand4_1  A =  10.89  Df =2330.7 -752.1 ps  S = 100.0 ps  Cin =  3.0 ff  Cout =   3.0 ff  Cmax = 300.0 ff  G =   97  
+ABC: Path  7 --    1092 : 3    9 sg13g2_nor3_1   A =   9.07  Df =2451.3 -562.3 ps  S = 392.2 ps  Cin =  3.0 ff  Cout =  26.1 ff  Cmax = 300.0 ff  G =  856  
+ABC: Path  8 --    1093 : 2    4 sg13g2_nand2b_1 A =   9.07  Df =2614.4 -549.3 ps  S =  79.8 ps  Cin =  2.6 ff  Cout =  11.2 ff  Cmax = 300.0 ff  G =  419  
+ABC: Path  9 --    2645 : 3   45 sg13g2_nor3_1   A =   9.07  Df =4284.6-1796.6 ps  S =2239.0 ps  Cin =  3.0 ff  Cout = 182.4 ff  Cmax = 300.0 ff  G = 5970  
+ABC: Path 10 --    2646 : 3    1 sg13g2_mux2_1   A =  18.14  Df =4655.4 -631.5 ps  S =  76.6 ps  Cin =  3.6 ff  Cout =   6.0 ff  Cmax = 300.0 ff  G =  167  
+ABC: Start-point = pi259 (\imem_data [31]).  End-point = po45 ($auto$rtlil.cc:3583:MuxGate$13621).
+ABC: netlist                       : i/o =  357/  588  lat =    0  nd =  2637  edge =   6864  area =26292.88  delay =20.00  lev = 20
+ABC: + write_blif /tmp/yosys-abc-VUnPsB/output.blif 
+
+152.1.2. Re-integrating ABC results.
+ABC RESULTS:     sg13g2_a21o_1 cells:       45
+ABC RESULTS:    sg13g2_a21oi_1 cells:      251
+ABC RESULTS:   sg13g2_a221oi_1 cells:      103
+ABC RESULTS:    sg13g2_a22oi_1 cells:      205
+ABC RESULTS:     sg13g2_and2_1 cells:       67
+ABC RESULTS:     sg13g2_and3_1 cells:       13
+ABC RESULTS:     sg13g2_and4_1 cells:       19
+ABC RESULTS:      sg13g2_inv_1 cells:      397
+ABC RESULTS:     sg13g2_mux2_1 cells:      225
+ABC RESULTS:    sg13g2_nand2_1 cells:      200
+ABC RESULTS:   sg13g2_nand2b_1 cells:       67
+ABC RESULTS:    sg13g2_nand3_1 cells:       73
+ABC RESULTS:   sg13g2_nand3b_1 cells:       18
+ABC RESULTS:    sg13g2_nand4_1 cells:       75
+ABC RESULTS:     sg13g2_nor2_1 cells:      210
+ABC RESULTS:    sg13g2_nor2b_1 cells:       41
+ABC RESULTS:     sg13g2_nor3_1 cells:       69
+ABC RESULTS:     sg13g2_nor4_1 cells:       40
+ABC RESULTS:    sg13g2_o21ai_1 cells:      277
+ABC RESULTS:      sg13g2_or2_1 cells:       55
+ABC RESULTS:      sg13g2_or3_1 cells:        9
+ABC RESULTS:      sg13g2_or4_1 cells:       10
+ABC RESULTS:    sg13g2_xnor2_1 cells:      137
+ABC RESULTS:     sg13g2_xor2_1 cells:       31
+ABC RESULTS:        internal signals:     3554
+ABC RESULTS:           input signals:      357
+ABC RESULTS:          output signals:      588
+Removing temp directory.
+Removing global temp directory.
+
+153. Executing SETUNDEF pass (replace undef values with defined constants).
+
+154. Executing HILOMAP pass (mapping to constant drivers).
+
+155. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+156. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 0 unused cells and 4499 unused wires.
+<suppressed ~38 debug messages>
+
+157. Executing INSBUF pass (insert buffer cells for connected wires).
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16442: \dmem_wdata [0] -> \io_wdata [0]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16443: \dmem_wdata [1] -> \io_wdata [1]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16444: \dmem_wdata [2] -> \io_wdata [2]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16445: \dmem_wdata [3] -> \io_wdata [3]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16446: \dmem_wdata [4] -> \io_wdata [4]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16447: \dmem_wdata [5] -> \io_wdata [5]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16448: \dmem_wdata [6] -> \io_wdata [6]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16449: \dmem_wdata [7] -> \io_wdata [7]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16450: \dmem_wdata [8] -> \io_wdata [8]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16451: \dmem_wdata [9] -> \io_wdata [9]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16452: \dmem_wdata [10] -> \io_wdata [10]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16453: \dmem_wdata [11] -> \io_wdata [11]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16454: \dmem_wdata [12] -> \io_wdata [12]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16455: \dmem_wdata [13] -> \io_wdata [13]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16456: \dmem_wdata [14] -> \io_wdata [14]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16457: \dmem_wdata [15] -> \io_wdata [15]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16458: \dmem_wdata [16] -> \io_wdata [16]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16459: \dmem_wdata [17] -> \io_wdata [17]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16460: \dmem_wdata [18] -> \io_wdata [18]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16461: \dmem_wdata [19] -> \io_wdata [19]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16462: \dmem_wdata [20] -> \io_wdata [20]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16463: \dmem_wdata [21] -> \io_wdata [21]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16464: \dmem_wdata [22] -> \io_wdata [22]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16465: \dmem_wdata [23] -> \io_wdata [23]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16466: \dmem_wdata [24] -> \io_wdata [24]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16467: \dmem_wdata [25] -> \io_wdata [25]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16468: \dmem_wdata [26] -> \io_wdata [26]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16469: \dmem_wdata [27] -> \io_wdata [27]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16470: \dmem_wdata [28] -> \io_wdata [28]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16471: \dmem_wdata [29] -> \io_wdata [29]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16472: \dmem_wdata [30] -> \io_wdata [30]
+Add CPU_TOP/$auto$insbuf.cc:97:execute$16473: \dmem_wdata [31] -> \io_wdata [31]
+
+158. Executing CHECK pass (checking for obvious problems).
+Checking module CPU_TOP...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/b54fe3ca5bdb4de99b39b1bbc9bee2d9.lib -liberty /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/9ccd0fff610946faafd61a7c5ca9ae18.lib ",
+   "modules": {
+      "\\CPU_TOP": {
+         "num_wires":         2811,
+         "num_wire_bits":     3035,
+         "num_pub_wires":     272,
+         "num_pub_wire_bits": 496,
+         "num_ports":         14,
+         "num_port_bits":     238,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         2929,
+         "num_submodules":       0,
+         "area":              39263.124600,
+         "sequential_area":    12737.088000,
+         "num_cells_by_type": {
+            "sg13g2_a21o_1": 45,
+            "sg13g2_a21oi_1": 251,
+            "sg13g2_a221oi_1": 103,
+            "sg13g2_a22oi_1": 205,
+            "sg13g2_and2_1": 67,
+            "sg13g2_and3_1": 13,
+            "sg13g2_and4_1": 19,
+            "sg13g2_buf_1": 32,
+            "sg13g2_dfrbpq_1": 260,
+            "sg13g2_inv_1": 397,
+            "sg13g2_mux2_1": 225,
+            "sg13g2_nand2_1": 200,
+            "sg13g2_nand2b_1": 67,
+            "sg13g2_nand3_1": 73,
+            "sg13g2_nand3b_1": 18,
+            "sg13g2_nand4_1": 75,
+            "sg13g2_nor2_1": 210,
+            "sg13g2_nor2b_1": 41,
+            "sg13g2_nor3_1": 69,
+            "sg13g2_nor4_1": 40,
+            "sg13g2_o21ai_1": 277,
+            "sg13g2_or2_1": 55,
+            "sg13g2_or3_1": 9,
+            "sg13g2_or4_1": 10,
+            "sg13g2_xnor2_1": 137,
+            "sg13g2_xor2_1": 31
+         }
+      }
+   },
+      "design": {
+         "num_wires":         2811,
+         "num_wire_bits":     3035,
+         "num_pub_wires":     272,
+         "num_pub_wire_bits": 496,
+         "num_ports":         14,
+         "num_port_bits":     238,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         2929,
+         "num_submodules":       0,
+         "area":              39263.124600,
+         "sequential_area":    12737.088000,
+         "num_cells_by_type": {
+            "sg13g2_a21o_1": 45,
+            "sg13g2_a21oi_1": 251,
+            "sg13g2_a221oi_1": 103,
+            "sg13g2_a22oi_1": 205,
+            "sg13g2_and2_1": 67,
+            "sg13g2_and3_1": 13,
+            "sg13g2_and4_1": 19,
+            "sg13g2_buf_1": 32,
+            "sg13g2_dfrbpq_1": 260,
+            "sg13g2_inv_1": 397,
+            "sg13g2_mux2_1": 225,
+            "sg13g2_nand2_1": 200,
+            "sg13g2_nand2b_1": 67,
+            "sg13g2_nand3_1": 73,
+            "sg13g2_nand3b_1": 18,
+            "sg13g2_nand4_1": 75,
+            "sg13g2_nor2_1": 210,
+            "sg13g2_nor2b_1": 41,
+            "sg13g2_nor3_1": 69,
+            "sg13g2_nor4_1": 40,
+            "sg13g2_o21ai_1": 277,
+            "sg13g2_or2_1": 55,
+            "sg13g2_or3_1": 9,
+            "sg13g2_or4_1": 10,
+            "sg13g2_xnor2_1": 137,
+            "sg13g2_xor2_1": 31
+         }
+      }
+}
+
+159. Printing statistics.
+
+=== CPU_TOP ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     2811        - wires
+     3035        - wire bits
+      272        - public wires
+      496        - public wire bits
+       14        - ports
+      238        - port bits
+     2929 3.93E+04 cells
+       45  571.536   sg13g2_a21o_1
+      251 2.28E+03   sg13g2_a21oi_1
+      103  1.5E+03   sg13g2_a221oi_1
+      205 2.22E+03   sg13g2_a22oi_1
+       67  607.824   sg13g2_and2_1
+       13   165.11   sg13g2_and3_1
+       19  275.789   sg13g2_and4_1
+       32  232.243   sg13g2_buf_1
+      260 1.27E+04   sg13g2_dfrbpq_1
+      397  2160.95   sg13g2_inv_1
+      225   4082.4   sg13g2_mux2_1
+      200  1451.52   sg13g2_nand2_1
+       67  607.824   sg13g2_nand2b_1
+       73  662.256   sg13g2_nand3_1
+       18  228.614   sg13g2_nand3b_1
+       75   816.48   sg13g2_nand4_1
+      210 1.52E+03   sg13g2_nor2_1
+       41  371.952   sg13g2_nor2b_1
+       69  625.968   sg13g2_nor3_1
+       40  435.456   sg13g2_nor4_1
+      277 2.51E+03   sg13g2_o21ai_1
+       55   498.96   sg13g2_or2_1
+        9  114.307   sg13g2_or3_1
+       10  145.152   sg13g2_or4_1
+      137 1.99E+03   sg13g2_xnor2_1
+       31  449.971   sg13g2_xor2_1
+
+   Chip area for module '\CPU_TOP': 39263.124600
+     of which used for sequential elements: 12737.088000 (32.44%)
+
+160. Executing Verilog backend.
+Dumping module `\CPU_TOP'.
+
+161. Executing JSON backend.

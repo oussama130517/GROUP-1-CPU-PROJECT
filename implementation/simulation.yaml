@@ -1,0 +1,402 @@
+# ============================================================
+#  SIMULATION CONFIGURATION
+#  File    : simulation.yaml
+#  Desc    : Detailed simulation settings and parameters
+# ============================================================
+
+simulation:
+  name: "CPU_SYSTEM_SIM"
+  
+  # Global simulation parameters
+  global:
+    timescale: "1ns/1ps"
+    time_unit: "ns"
+    precision: "ps"
+    
+    # Simulation duration
+    duration: "1000 ns"
+    timeout: "10000 ns"
+    
+    # Waveform settings
+    waveform:
+      enabled: true
+      format: "VCD"           # VCD, FST, or EVCD
+      file: "simulation.vcd"
+      compress: false
+      
+      # Signals to capture
+      signals:
+        - "CPU_SYSTEM.*"
+        - "CPU_TOP.*"
+        - "u_pc.pc_current"
+        - "u_alu.Result"
+        - "u_regfile.*"
+        - "u_imem.imem"
+        - "u_dmem.dmem"
+
+  # Clock generation
+  clock:
+    enabled: true
+    period: "10 ns"         # 100 MHz
+    duty_cycle: 50          # percentage
+    start_time: "0 ns"
+    phase: "0 ns"
+    jitter: "0 ps"          # no jitter for simulation
+    
+    # Clock gating analysis
+    gating_analysis: false
+
+  # Reset signal
+  reset:
+    enabled: true
+    type: "asynchronous"    # synchronous or asynchronous
+    level: "high"           # high or low (active high/low)
+    duration: "100 ns"
+    release_time: "100 ns"
+    assert_at: "0 ns"
+
+  # Test vectors and stimulus
+  test_stimulus:
+    # Option 1: Random test vectors
+    random_tests:
+      enabled: false
+      count: 100
+      seed: 12345
+    
+    # Option 2: Directed test vectors
+    directed_tests:
+      enabled: true
+      file: "sim/test_vectors.txt"
+    
+    # Option 3: Programmatic stimulus
+    program:
+      enabled: true
+      language: "Verilog"
+      file: "sim/testbench.v"
+
+  # Simulation modes
+  modes:
+    # Behavioral simulation (pre-synthesis)
+    behavioral:
+      enabled: true
+      path: "./sim/behavioral/"
+      description: "Functional simulation of HDL code"
+    
+    # Gate-level simulation (post-synthesis)
+    gate_level:
+      enabled: false
+      path: "./sim/gate_level/"
+      description: "Timing-accurate post-synthesis simulation"
+    
+    # Timing simulation (post-place & route)
+    timing:
+      enabled: false
+      path: "./sim/timing/"
+      description: "Full timing simulation with delays"
+
+  # Debugging options
+  debug:
+    # Waveform debugging
+    waveform_debug: true
+    vcd_file: "debug.vcd"
+    
+    # Variable tracking
+    track_variables:
+      - "pc_current"
+      - "imem_data"
+      - "opcode"
+      - "rs1_data"
+      - "rs2_data"
+      - "alu_result"
+      - "dmem_rdata"
+      - "n_flag"
+      - "z_flag"
+      - "c_flag"
+      - "v_flag"
+    
+    # Assertion checking
+    assertions: true
+    assertion_severity: "error"  # error, warning, or note
+    
+    # Breakpoints
+    breakpoints: []
+    # Example: ["@50000ps", "when pc_current==32'h0C"]
+
+  # Performance monitoring
+  performance:
+    enabled: true
+    
+    # Memory usage
+    memory_tracking: true
+    
+    # Simulation statistics
+    statistics:
+      clock_cycles: true
+      instruction_count: true
+      memory_access_count: true
+      alu_operations: true
+
+  # Coverage analysis
+  coverage:
+    enabled: true
+    types:
+      code_coverage: true           # Line, branch, statement
+      functional_coverage: true      # Covergroups
+      assertion_coverage: true       # Assertion evaluation
+    
+    coverage_file: "coverage.ucdb"
+    exclude_modules: ["*_TB"]
+
+  # Assertion-based verification
+  assertions:
+    enabled: true
+    
+    # Immediate assertions
+    immediate:
+      - name: "PC_Valid_Range"
+        condition: "pc_current < 32'h00001000"
+    
+    # Concurrent assertions
+    concurrent: []
+
+  # Cross-probing support
+  cross_probe:
+    enabled: false
+    connection: "localhost:3000"
+
+  # Batch simulation
+  batch_mode:
+    enabled: false
+    num_runs: 1
+    param_sweep:
+      enabled: false
+      parameters: []
+
+  # Post-simulation analysis
+  post_simulation:
+    # Analysis scripts
+    analysis_scripts:
+      - "sim/analyze.py"
+      - "sim/report.py"
+    
+    # Output reports
+    reports:
+      coverage_report: true
+      wave_analysis: true
+      timing_report: false
+
+# ============================================================
+# TEST CONFIGURATIONS
+# ============================================================
+
+test_configs:
+  
+  # Test 1: Basic Functionality
+  test_basic:
+    name: "Basic Functionality Test"
+    duration: "100 ns"
+    description: "Test basic ALU and register operations"
+    enabled: true
+    
+    stimulus:
+      - "Reset system"
+      - "Load test program to IMEM"
+      - "Execute 10 instructions"
+    
+    expected_outputs:
+      - "PC increments by 4"
+      - "ALU produces correct results"
+      - "Registers update correctly"
+    
+    pass_criteria:
+      - "No X/Z in critical signals"
+      - "PC sequence is correct"
+
+  # Test 2: Memory Operations
+  test_memory:
+    name: "Memory Operations Test"
+    duration: "200 ns"
+    description: "Test DMEM read/write operations"
+    enabled: true
+    
+    stimulus:
+      - "Write data to DMEM"
+      - "Read data from DMEM"
+      - "Verify data integrity"
+    
+    expected_outputs:
+      - "Written data matches read data"
+      - "No data corruption"
+    
+    pass_criteria:
+      - "100% data accuracy"
+
+  # Test 3: Branch Instructions
+  test_branch:
+    name: "Branch Instructions Test"
+    duration: "150 ns"
+    description: "Test all branch types (conditional & unconditional)"
+    enabled: true
+    
+    stimulus:
+      - "Execute JMP instruction"
+      - "Test conditional branches (JZ, JN, JC, JV)"
+      - "Verify PC updates"
+    
+    expected_outputs:
+      - "PC jumps to target address"
+      - "Conditional branches respect flag values"
+    
+    pass_criteria:
+      - "All branches executed correctly"
+
+  # Test 4: Stack Operations
+  test_stack:
+    name: "Stack Operations Test"
+    duration: "150 ns"
+    description: "Test PUSH/POP and subroutine calls"
+    enabled: true
+    
+    stimulus:
+      - "PUSH values to stack"
+      - "CALL subroutine"
+      - "RET from subroutine"
+      - "POP values from stack"
+    
+    expected_outputs:
+      - "Stack pointer updates correctly"
+      - "Return address preserved"
+    
+    pass_criteria:
+      - "Stack operations consistent"
+
+  # Test 5: Flag Operations
+  test_flags:
+    name: "Flag Operations Test"
+    duration: "100 ns"
+    description: "Test flag updates and carry operations"
+    enabled: true
+    
+    stimulus:
+      - "Perform operations that set flags"
+      - "Execute SETC/CLRC instructions"
+      - "Verify flag states"
+    
+    expected_outputs:
+      - "Flags update with ALU results"
+      - "SETC/CLRC override ALU flags"
+    
+    pass_criteria:
+      - "Correct flag values after operations"
+
+# ============================================================
+# COMPILER & SIMULATOR SETTINGS
+# ============================================================
+
+compiler:
+  # iVerilog settings
+  iverilog:
+    enabled: true
+    binary: "iverilog"
+    flags:
+      - "-g2009"              # Verilog 2009 standard
+      - "-Wall"               # All warnings
+      - "-Winfloop"           # Warn on infinite loops
+    output_file: "a.out"
+    
+    # Preprocessing
+    defines:
+      SIMULATION: "1"
+      DEBUG: "0"
+    
+    include_dirs:
+      - "./src"
+      - "./sim"
+  
+  # VVP (iVerilog simulator)
+  vvp:
+    enabled: true
+    binary: "vvp"
+    flags:
+      - "-v"                  # Verbose
+    modules: []
+
+  # ModelSim settings
+  modelsim:
+    enabled: true
+    simulator: "vsim"
+    compiler: "vlog"
+    flags:
+      - "+incdir+./src"
+      - "-explicit"
+      - "-dpiheader"
+    
+    # ModelSim options
+    vsim_flags:
+      - "-c"                  # Console mode
+      - "-do sim.do"          # Do file
+    
+    work_directory: "work"
+
+  # Xsim (Xilinx) settings
+  xsim:
+    enabled: false
+    project: "project.xpr"
+
+# ============================================================
+# REPORT GENERATION
+# ============================================================
+
+reports:
+  enabled: true
+  output_dir: "./reports/"
+  
+  report_types:
+    - type: "Simulation Summary"
+      file: "sim_summary.txt"
+      
+    - type: "Coverage Report"
+      file: "coverage_report.html"
+      
+    - type: "Waveform Analysis"
+      file: "wave_analysis.txt"
+      
+    - type: "Performance Report"
+      file: "performance.txt"
+
+# ============================================================
+# LOGGING & OUTPUT
+# ============================================================
+
+logging:
+  enabled: true
+  level: "INFO"              # DEBUG, INFO, WARNING, ERROR
+  
+  # Log output files
+  files:
+    simulation: "sim.log"
+    errors: "errors.log"
+    warnings: "warnings.log"
+  
+  # Console output
+  console:
+    enabled: true
+    verbosity: "medium"      # minimal, medium, verbose
+  
+  # Log format
+  format: "[%TIME%] %LEVEL% - %MESSAGE%"
+  timestamp: true
+
+# ============================================================
+# ENVIRONMENT VARIABLES
+# ============================================================
+
+environment:
+  SIM_DIR: "./sim"
+  OUTPUT_DIR: "./reports"
+  VERILOG_DIR: "./src"
+  WORK_DIR: "./work"
+  
+  # Tool paths (optional)
+  IVERILOG_PATH: "/usr/bin/iverilog"
+  VVP_PATH: "/usr/bin/vvp"

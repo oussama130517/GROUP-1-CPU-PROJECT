@@ -1,0 +1,198 @@
+Reading timing models for corner nom_fast_1p32V_m40C…
+Reading timing library for the 'nom_fast_1p32V_m40C' corner at '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_fast_1p32V_m40C.lib'…
+Reading timing library for the 'nom_fast_1p32V_m40C' corner at '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_fast_1p32V_3p6V_m40C.lib'…
+Reading timing models for corner nom_slow_1p08V_125C…
+Reading timing library for the 'nom_slow_1p08V_125C' corner at '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_slow_1p08V_125C.lib'…
+Reading timing library for the 'nom_slow_1p08V_125C' corner at '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_slow_1p08V_3p0V_125C.lib'…
+Reading timing models for corner nom_typ_1p20V_25C…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/home/user/your_directory/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib'…
+Reading OpenROAD database at '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/35-openroad-cts/CPU_TOP.odb'…
+Reading design constraints file at '/nix/store/4ih3gsigr3b9bd23wa17npi2ivyrcbnd-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 2
+[INFO] Setting input delay to: 2
+[INFO] Setting load to: 0.006
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
++ repair_timing -verbose -setup -setup_margin 0.05000000000000000277555756156289135105907917022705078125 -max_buffer_percent 50
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0094] Found 85 endpoints with setup violations.
+[INFO RSZ-0099] Repairing 85 out of 85 (100.00%) violating endpoints...
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |   TNS      |  Viol  | Worst
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |          |            | Endpts | Endpt
+--------------------------------------------------------------------------------------------------------------
+        0 |       0 |       0 |        0 |      0 |     0 |    +0.0% |   -1.636 |      -57.2 |     85 | dmem_addr[31]
+       10 |       0 |       1 |        5 |      0 |     4 |    +0.1% |   -1.232 |      -52.7 |     85 | _5194_/D
+       20 |       0 |       9 |        6 |      0 |     5 |    +0.2% |   -0.840 |      -13.7 |     85 | dmem_addr[31]
+       30 |       0 |      17 |        7 |      0 |     6 |    +0.3% |   -0.406 |       -3.4 |     85 | dmem_addr[31]
+       40 |       1 |      22 |        9 |      0 |     8 |    +0.3% |   -0.261 |       -3.0 |     85 | dmem_addr[31]
+       50 |       1 |      28 |       12 |      0 |    10 |    +0.5% |   -0.135 |       -0.5 |     85 | dmem_addr[31]
+       55 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     83 | dmem_addr[31]
+       56 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     82 | dmem_addr[31]
+       57 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     81 | dmem_addr[31]
+       58 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     80 | dmem_addr[31]
+       59 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     79 | dmem_addr[31]
+       60 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     79 | dmem_addr[31]
+       60 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     78 | dmem_addr[31]
+       61 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     77 | dmem_addr[31]
+       62 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     76 | dmem_addr[31]
+       63 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     75 | dmem_addr[31]
+       64 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     74 | dmem_addr[31]
+       65 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     73 | dmem_addr[31]
+       66 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     72 | dmem_addr[31]
+       67 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     71 | dmem_addr[31]
+       68 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     70 | dmem_addr[31]
+       69 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     69 | dmem_addr[31]
+       70 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     69 | dmem_addr[31]
+       70 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     68 | dmem_addr[31]
+       71 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     67 | dmem_addr[31]
+       72 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     66 | dmem_addr[31]
+       73 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     65 | dmem_addr[31]
+       74 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     64 | dmem_addr[31]
+       75 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     63 | dmem_addr[31]
+       76 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     62 | dmem_addr[31]
+       77 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     61 | dmem_addr[31]
+       78 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     60 | dmem_addr[31]
+       79 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     59 | dmem_addr[31]
+       80 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     59 | dmem_addr[31]
+       80 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     58 | dmem_addr[31]
+       81 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     57 | dmem_addr[31]
+       82 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     56 | dmem_addr[31]
+       83 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     55 | dmem_addr[31]
+       84 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     54 | dmem_addr[31]
+       85 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     53 | dmem_addr[31]
+       86 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     52 | dmem_addr[31]
+       87 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     51 | dmem_addr[31]
+       88 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     50 | dmem_addr[31]
+       89 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     49 | dmem_addr[31]
+       90 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     49 | dmem_addr[31]
+       90 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     48 | dmem_addr[31]
+       91 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     47 | dmem_addr[31]
+       92 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     46 | dmem_addr[31]
+       93 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     45 | dmem_addr[31]
+       94 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     44 | dmem_addr[31]
+       95 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     43 | dmem_addr[31]
+       96 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     42 | dmem_addr[31]
+       97 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     41 | dmem_addr[31]
+       98 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     40 | dmem_addr[31]
+       99 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     39 | dmem_addr[31]
+      100 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     39 | dmem_addr[31]
+      100 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     38 | dmem_addr[31]
+      101 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     37 | dmem_addr[31]
+      102 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     36 | dmem_addr[31]
+      103 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     35 | dmem_addr[31]
+      104 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     34 | dmem_addr[31]
+      105 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     33 | dmem_addr[31]
+      106 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     32 | dmem_addr[31]
+      107 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     31 | dmem_addr[31]
+      108 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     30 | dmem_addr[31]
+      109 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     29 | dmem_addr[31]
+      110 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     29 | dmem_addr[31]
+      110 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     28 | dmem_addr[31]
+      111 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     27 | dmem_addr[31]
+      112 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     26 | dmem_addr[31]
+      113 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     25 | dmem_addr[31]
+      114 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     24 | dmem_addr[31]
+      115 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     23 | dmem_addr[31]
+      116 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     22 | dmem_addr[31]
+      117 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     21 | dmem_addr[31]
+      118 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     20 | dmem_addr[31]
+      119 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     19 | dmem_addr[31]
+      120 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     19 | dmem_addr[31]
+      120 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     18 | dmem_addr[31]
+      121 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     17 | dmem_addr[31]
+      122 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     16 | dmem_addr[31]
+      123 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     15 | dmem_addr[31]
+      124 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     14 | dmem_addr[31]
+      125 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     13 | dmem_addr[31]
+      126 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     12 | dmem_addr[31]
+      127 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     11 | dmem_addr[31]
+      128 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |     10 | dmem_addr[31]
+      129 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      9 | dmem_addr[31]
+      130 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      9 | dmem_addr[31]
+      130 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      8 | dmem_addr[31]
+      131 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      7 | dmem_addr[31]
+      132 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      6 | dmem_addr[31]
+      133 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      5 | dmem_addr[31]
+      134 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      4 | dmem_addr[31]
+      135 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      3 | dmem_addr[31]
+      136 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      2 | dmem_addr[31]
+      137 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      1 | dmem_addr[31]
+      138 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      0 | dmem_addr[31]
+      139 |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      0 | dmem_addr[31]
+     140* |       1 |      29 |       15 |      0 |    11 |    +0.5% |   -0.032 |       -0.0 |      1 | dmem_addr[31]
+     142* |       1 |      31 |       15 |      0 |    11 |    +0.6% |    0.055 |        0.0 |      0 | _5194_/D
+    final |       1 |      31 |       15 |      0 |    11 |    +0.6% |    0.055 |        0.0 |      0 | _5194_/D
+--------------------------------------------------------------------------------------------------------------
+[INFO RSZ-0059] Removed 1 buffers.
+[INFO RSZ-0040] Inserted 15 buffers.
+[INFO RSZ-0051] Resized 31 instances: 31 up, 0 up match, 0 down, 0 VT
+[INFO RSZ-0043] Swapped pins on 11 instances.
++ repair_timing -verbose -hold -setup_margin 0.05000000000000000277555756156289135105907917022705078125 -hold_margin 0.1000000000000000055511151231257827021181583404541015625 -max_buffer_percent 50
+[INFO RSZ-0046] Found 258 endpoints with hold violations.
+Iteration | Resized | Buffers | Cloned Gates |   Area   |   WNS   |   TNS   | Endpoint
+--------------------------------------------------------------------------------------
+        0 |       0 |       0 |            0 |    +0.0% |  -0.059 |  -7.533 | _5228_/D
+       10 |       0 |       9 |            0 |    +0.3% |  -0.046 |  -7.066 | _5309_/D
+       20 |       0 |      19 |            0 |    +0.7% |  -0.041 |  -6.627 | _5229_/D
+       30 |       0 |      29 |            0 |    +1.1% |  -0.038 |  -6.231 | _5231_/D
+       40 |       0 |      39 |            0 |    +1.4% |  -0.034 |  -5.874 | _5351_/D
+       50 |       0 |      49 |            0 |    +1.8% |  -0.033 |  -5.538 | _5408_/D
+       60 |       0 |      59 |            0 |    +2.1% |  -0.033 |  -5.207 | _5385_/D
+       70 |       0 |      69 |            0 |    +2.5% |  -0.033 |  -4.879 | _5241_/D
+       80 |       0 |      79 |            0 |    +2.9% |  -0.032 |  -4.553 | _5308_/D
+       90 |       0 |      89 |            0 |    +3.2% |  -0.032 |  -4.230 | _5365_/D
+      100 |       0 |      99 |            0 |    +3.6% |  -0.032 |  -3.907 | _5402_/D
+      110 |       0 |     109 |            0 |    +4.0% |  -0.032 |  -3.587 | _5270_/D
+      120 |       0 |     119 |            0 |    +4.3% |  -0.032 |  -3.271 | _5292_/D
+      130 |       0 |     129 |            0 |    +4.7% |  -0.031 |  -2.956 | _5189_/D
+      140 |       0 |     139 |            0 |    +5.1% |  -0.031 |  -2.645 | _5417_/D
+      150 |       0 |     149 |            0 |    +5.4% |  -0.031 |  -2.336 | _5388_/D
+      160 |       0 |     159 |            0 |    +5.8% |  -0.030 |  -2.030 | _5190_/D
+      170 |       0 |     169 |            0 |    +6.2% |  -0.030 |  -1.727 | _5273_/D
+      180 |       0 |     179 |            0 |    +6.5% |  -0.030 |  -1.427 | _5434_/D
+      190 |       0 |     189 |            0 |    +6.9% |  -0.029 |  -1.132 | _5336_/D
+      200 |       0 |     199 |            0 |    +7.2% |  -0.029 |  -0.841 | _5293_/D
+      210 |       0 |     209 |            0 |    +7.6% |  -0.028 |  -0.557 | _5375_/D
+      220 |       0 |     219 |            0 |    +8.0% |  -0.027 |  -0.280 | _5432_/D
+      230 |       0 |     229 |            0 |    +8.3% |  -0.022 |  -0.022 | _5247_/D
+      240 |       0 |     251 |            0 |    +9.1% |   0.042 |   0.000 | _5219_/D
+      250 |       0 |     265 |            0 |    +9.6% |   0.058 |   0.000 | _5211_/D
+      260 |       0 |     279 |            0 |   +10.2% |   0.098 |   0.000 | _5215_/D
+    final |       0 |     281 |            0 |   +10.2% |   0.103 |   0.000 | _5201_/D
+--------------------------------------------------------------------------------------
+[INFO RSZ-0032] Inserted 281 hold buffers.
++ detailed_placement -max_displacement  500 100 
+Placement Analysis
+---------------------------------
+total displacement       2285.9 u
+average displacement        0.6 u
+max displacement           12.3 u
+original HPWL          135225.5 u
+legalized HPWL         138915.0 u
+delta HPWL                    3 %
+
+[INFO DPL-0020] Mirrored 1814 instances
+[INFO DPL-0021] HPWL before          138915.0 u
+[INFO DPL-0022] HPWL after           135794.7 u
+[INFO DPL-0023] HPWL delta               -2.2 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 592 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Buffer                                   32     232.24
+  Clock buffer                             31     840.07
+  Timing Repair Buffer                    892    9079.26
+  Inverter                                397    2160.95
+  Clock inverter                           15     163.30
+  Sequential cell                         260   12737.09
+  Multi-Input combinational cell         2240   24234.94
+  Total                                  3867   49447.84
+Writing OpenROAD database to '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/37-openroad-resizertimingpostcts/CPU_TOP.odb'…
+Writing netlist to '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/37-openroad-resizertimingpostcts/CPU_TOP.nl.v'…
+Writing powered netlist to '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/37-openroad-resizertimingpostcts/CPU_TOP.pnl.v'…
+Writing layout to '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/37-openroad-resizertimingpostcts/CPU_TOP.def'…
+Writing timing constraints to '/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/37-openroad-resizertimingpostcts/CPU_TOP.sdc'…

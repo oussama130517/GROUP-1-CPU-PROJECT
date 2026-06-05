@@ -1,0 +1,23 @@
+
+25. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\REG_FILE.$mem2reg_rd$\regs$/home/user/cpu_project/register.v:42$58_DATA' from process `\REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+No latch inferred for signal `\REG_FILE.$mem2reg_rd$\regs$/home/user/cpu_project/register.v:41$57_DATA' from process `\REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+No latch inferred for signal `\ALU_32.\V_flag' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\Result' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\C_out' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\Res33' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\CONTROL_UNIT.\ALU_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IMM_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\REG_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_RD' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_SRC' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\PUSH_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\POP_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\PC_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\BRANCH_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\SETC_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\CLRC_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IO_RD' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IO_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\PROGRAM_COUNTER.\pc_next' from process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.

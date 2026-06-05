@@ -1,0 +1,422 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+
+1. Executing Verilog-2005 frontend: /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/485bb5ff96dd449a86282e24e2139ecf.bb.v
+Parsing SystemVerilog input from `/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/485bb5ff96dd449a86282e24e2139ecf.bb.v' to AST representation.
+Generating RTLIL representation for module `\sg13g2_a21o_1'.
+Generating RTLIL representation for module `\sg13g2_a21o_2'.
+Generating RTLIL representation for module `\sg13g2_a21oi_1'.
+Generating RTLIL representation for module `\sg13g2_a21oi_2'.
+Generating RTLIL representation for module `\sg13g2_a221oi_1'.
+Generating RTLIL representation for module `\sg13g2_a22oi_1'.
+Generating RTLIL representation for module `\sg13g2_and2_1'.
+Generating RTLIL representation for module `\sg13g2_and2_2'.
+Generating RTLIL representation for module `\sg13g2_and3_1'.
+Generating RTLIL representation for module `\sg13g2_and3_2'.
+Generating RTLIL representation for module `\sg13g2_and4_1'.
+Generating RTLIL representation for module `\sg13g2_and4_2'.
+Generating RTLIL representation for module `\sg13g2_antennanp'.
+Generating RTLIL representation for module `\sg13g2_buf_1'.
+Generating RTLIL representation for module `\sg13g2_buf_16'.
+Generating RTLIL representation for module `\sg13g2_buf_2'.
+Generating RTLIL representation for module `\sg13g2_buf_4'.
+Generating RTLIL representation for module `\sg13g2_buf_8'.
+Generating RTLIL representation for module `\sg13g2_decap_4'.
+Generating RTLIL representation for module `\sg13g2_decap_8'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_dlhq_1'.
+Generating RTLIL representation for module `\sg13g2_dlhr_1'.
+Generating RTLIL representation for module `\sg13g2_dlhrq_1'.
+Generating RTLIL representation for module `\sg13g2_dllr_1'.
+Generating RTLIL representation for module `\sg13g2_dllrq_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd1_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd2_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd3_1'.
+Generating RTLIL representation for module `\sg13g2_ebufn_2'.
+Generating RTLIL representation for module `\sg13g2_ebufn_4'.
+Generating RTLIL representation for module `\sg13g2_ebufn_8'.
+Generating RTLIL representation for module `\sg13g2_einvn_2'.
+Generating RTLIL representation for module `\sg13g2_einvn_4'.
+Generating RTLIL representation for module `\sg13g2_einvn_8'.
+Generating RTLIL representation for module `\sg13g2_fill_1'.
+Generating RTLIL representation for module `\sg13g2_fill_2'.
+Generating RTLIL representation for module `\sg13g2_fill_4'.
+Generating RTLIL representation for module `\sg13g2_fill_8'.
+Generating RTLIL representation for module `\sg13g2_inv_1'.
+Generating RTLIL representation for module `\sg13g2_inv_16'.
+Generating RTLIL representation for module `\sg13g2_inv_2'.
+Generating RTLIL representation for module `\sg13g2_inv_4'.
+Generating RTLIL representation for module `\sg13g2_inv_8'.
+Generating RTLIL representation for module `\sg13g2_lgcp_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_2'.
+Generating RTLIL representation for module `\sg13g2_mux4_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_2'.
+Generating RTLIL representation for module `\sg13g2_nand2b_1'.
+Generating RTLIL representation for module `\sg13g2_nand2b_2'.
+Generating RTLIL representation for module `\sg13g2_nand3_1'.
+Generating RTLIL representation for module `\sg13g2_nand3b_1'.
+Generating RTLIL representation for module `\sg13g2_nand4_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_2'.
+Generating RTLIL representation for module `\sg13g2_nor2b_1'.
+Generating RTLIL representation for module `\sg13g2_nor2b_2'.
+Generating RTLIL representation for module `\sg13g2_nor3_1'.
+Generating RTLIL representation for module `\sg13g2_nor3_2'.
+Generating RTLIL representation for module `\sg13g2_nor4_1'.
+Generating RTLIL representation for module `\sg13g2_nor4_2'.
+Generating RTLIL representation for module `\sg13g2_o21ai_1'.
+Generating RTLIL representation for module `\sg13g2_or2_1'.
+Generating RTLIL representation for module `\sg13g2_or2_2'.
+Generating RTLIL representation for module `\sg13g2_or3_1'.
+Generating RTLIL representation for module `\sg13g2_or3_2'.
+Generating RTLIL representation for module `\sg13g2_or4_1'.
+Generating RTLIL representation for module `\sg13g2_or4_2'.
+Generating RTLIL representation for module `\sg13g2_sdfbbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_sighold'.
+Generating RTLIL representation for module `\sg13g2_slgcp_1'.
+Generating RTLIL representation for module `\sg13g2_tiehi'.
+Generating RTLIL representation for module `\sg13g2_tielo'.
+Generating RTLIL representation for module `\sg13g2_xnor2_1'.
+Generating RTLIL representation for module `\sg13g2_xor2_1'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/21a4ac802feb410397534a7418390335.bb.v
+Parsing SystemVerilog input from `/home/user/cpu_project/runs/RUN_2026-06-05_18-53-50/tmp/21a4ac802feb410397534a7418390335.bb.v' to AST representation.
+Generating RTLIL representation for module `\sg13g2_Corner'.
+Generating RTLIL representation for module `\sg13g2_Filler1000'.
+Generating RTLIL representation for module `\sg13g2_Filler10000'.
+Generating RTLIL representation for module `\sg13g2_Filler200'.
+Generating RTLIL representation for module `\sg13g2_Filler2000'.
+Generating RTLIL representation for module `\sg13g2_Filler400'.
+Generating RTLIL representation for module `\sg13g2_Filler4000'.
+Generating RTLIL representation for module `\sg13g2_IOPadAnalog'.
+Generating RTLIL representation for module `\sg13g2_IOPadIOVdd'.
+Generating RTLIL representation for module `\sg13g2_IOPadIOVss'.
+Generating RTLIL representation for module `\sg13g2_IOPadIn'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadVdd'.
+Generating RTLIL representation for module `\sg13g2_IOPadVss'.
+Successfully finished Verilog frontend.
+wtaf
+
+3. Executing Verilog-2005 frontend: /home/user/cpu_project/cpu_top.v
+Parsing SystemVerilog input from `/home/user/cpu_project/cpu_top.v' to AST representation.
+Storing AST representation for module `$abstract\CPU_TOP'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/user/cpu_project/program_counter.v
+Parsing SystemVerilog input from `/home/user/cpu_project/program_counter.v' to AST representation.
+Storing AST representation for module `$abstract\PROGRAM_COUNTER'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/user/cpu_project/control_unit.v
+Parsing SystemVerilog input from `/home/user/cpu_project/control_unit.v' to AST representation.
+Storing AST representation for module `$abstract\CONTROL_UNIT'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/user/cpu_project/register.v
+Parsing SystemVerilog input from `/home/user/cpu_project/register.v' to AST representation.
+Storing AST representation for module `$abstract\REG_FILE'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/user/cpu_project/alu.v
+Parsing SystemVerilog input from `/home/user/cpu_project/alu.v' to AST representation.
+Storing AST representation for module `$abstract\ALU_32'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/user/cpu_project/flags_register.v
+Parsing SystemVerilog input from `/home/user/cpu_project/flags_register.v' to AST representation.
+Storing AST representation for module `$abstract\FLAGS_REGISTER'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/user/cpu_project/branch_logic.v
+Parsing SystemVerilog input from `/home/user/cpu_project/branch_logic.v' to AST representation.
+Storing AST representation for module `$abstract\BRANCH_LOGIC'.
+Successfully finished Verilog frontend.
+
+10. Executing Verilog-2005 frontend: /home/user/cpu_project/sign_extend.v
+Parsing SystemVerilog input from `/home/user/cpu_project/sign_extend.v' to AST representation.
+Storing AST representation for module `$abstract\SIGN_EXTEND'.
+Successfully finished Verilog frontend.
+
+11. Executing Verilog-2005 frontend: /home/user/cpu_project/instruction_memory.v
+Parsing SystemVerilog input from `/home/user/cpu_project/instruction_memory.v' to AST representation.
+Storing AST representation for module `$abstract\INSTRUCTION_MEMORY'.
+Successfully finished Verilog frontend.
+
+12. Executing Verilog-2005 frontend: /home/user/cpu_project/data_memory.v
+Parsing SystemVerilog input from `/home/user/cpu_project/data_memory.v' to AST representation.
+Storing AST representation for module `$abstract\DATA_MEMORY'.
+Successfully finished Verilog frontend.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+14. Executing AST frontend in derive mode using pre-parsed AST for module `\CPU_TOP'.
+Generating RTLIL representation for module `\CPU_TOP'.
+
+14.1. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+
+14.2. Executing AST frontend in derive mode using pre-parsed AST for module `\FLAGS_REGISTER'.
+Generating RTLIL representation for module `\FLAGS_REGISTER'.
+
+14.3. Executing AST frontend in derive mode using pre-parsed AST for module `\ALU_32'.
+Generating RTLIL representation for module `\ALU_32'.
+
+14.4. Executing AST frontend in derive mode using pre-parsed AST for module `\SIGN_EXTEND'.
+Generating RTLIL representation for module `\SIGN_EXTEND'.
+
+14.5. Executing AST frontend in derive mode using pre-parsed AST for module `\REG_FILE'.
+Generating RTLIL representation for module `\REG_FILE'.
+Warning: Replacing memory \regs with list of registers. See /home/user/cpu_project/register.v:34
+
+14.6. Executing AST frontend in derive mode using pre-parsed AST for module `\CONTROL_UNIT'.
+Generating RTLIL representation for module `\CONTROL_UNIT'.
+
+14.7. Executing AST frontend in derive mode using pre-parsed AST for module `\BRANCH_LOGIC'.
+Generating RTLIL representation for module `\BRANCH_LOGIC'.
+
+14.8. Executing AST frontend in derive mode using pre-parsed AST for module `\PROGRAM_COUNTER'.
+Generating RTLIL representation for module `\PROGRAM_COUNTER'.
+
+14.9. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+Used module:     \FLAGS_REGISTER
+Used module:     \ALU_32
+Used module:     \SIGN_EXTEND
+Used module:     \REG_FILE
+Used module:     \CONTROL_UNIT
+Used module:     \BRANCH_LOGIC
+Used module:     \PROGRAM_COUNTER
+
+14.10. Analyzing design hierarchy..
+Top module:  \CPU_TOP
+Used module:     \FLAGS_REGISTER
+Used module:     \ALU_32
+Used module:     \SIGN_EXTEND
+Used module:     \REG_FILE
+Used module:     \CONTROL_UNIT
+Used module:     \BRANCH_LOGIC
+Used module:     \PROGRAM_COUNTER
+Removing unused module `$abstract\DATA_MEMORY'.
+Removing unused module `$abstract\INSTRUCTION_MEMORY'.
+Removing unused module `$abstract\SIGN_EXTEND'.
+Removing unused module `$abstract\BRANCH_LOGIC'.
+Removing unused module `$abstract\FLAGS_REGISTER'.
+Removing unused module `$abstract\ALU_32'.
+Removing unused module `$abstract\REG_FILE'.
+Removing unused module `$abstract\CONTROL_UNIT'.
+Removing unused module `$abstract\PROGRAM_COUNTER'.
+Removing unused module `$abstract\CPU_TOP'.
+Removed 10 unused modules.
+Renaming module CPU_TOP to CPU_TOP.
+
+15. Executing PROC pass (convert processes to netlists).
+
+15.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/home/user/cpu_project/register.v:42$75 in module REG_FILE.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/register.v:42$75 in module REG_FILE.
+Removed 1 dead cases from process $proc$/home/user/cpu_project/register.v:41$72 in module REG_FILE.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/register.v:41$72 in module REG_FILE.
+Marked 3 switch rules as full_case in process $proc$/home/user/cpu_project/register.v:31$59 in module REG_FILE.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/alu.v:47$21 in module ALU_32.
+Marked 3 switch rules as full_case in process $proc$/home/user/cpu_project/flags_register.v:33$19 in module FLAGS_REGISTER.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/control_unit.v:84$78 in module CONTROL_UNIT.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/program_counter.v:44$85 in module PROGRAM_COUNTER.
+Marked 1 switch rules as full_case in process $proc$/home/user/cpu_project/program_counter.v:32$82 in module PROGRAM_COUNTER.
+Removed a total of 2 dead cases.
+
+15.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 24 assignments to connections.
+
+15.4. Executing PROC_INIT pass (extract init attributes).
+
+15.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+Found async reset \rst in `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+Found async reset \rst in `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+
+15.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+15.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+     1/1: $1$mem2reg_rd$\regs$/home/user/cpu_project/register.v:42$58_DATA[31:0]$77
+Creating decoders for process `\REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+     1/1: $1$mem2reg_rd$\regs$/home/user/cpu_project/register.v:41$57_DATA[31:0]$74
+Creating decoders for process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+     1/13: $2$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_ADDR[2:0]$66
+     2/13: $2$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_DATA[31:0]$67
+     3/13: $1$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_DATA[31:0]$63
+     4/13: $1$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_ADDR[2:0]$62
+     5/13: $1\i[31:0]
+     6/13: $0\regs[7][31:0]
+     7/13: $0\regs[6][31:0]
+     8/13: $0\regs[5][31:0]
+     9/13: $0\regs[4][31:0]
+    10/13: $0\regs[3][31:0]
+    11/13: $0\regs[2][31:0]
+    12/13: $0\regs[1][31:0]
+    13/13: $0\regs[0][31:0]
+Creating decoders for process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+     1/4: $1\V_flag[0:0]
+     2/4: $1\C_out[0:0]
+     3/4: $1\Result[31:0]
+     4/4: $1\Res33[32:0]
+Creating decoders for process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+     1/4: $0\V_flag[0:0]
+     2/4: $0\C_flag[0:0]
+     3/4: $0\Z_flag[0:0]
+     4/4: $0\N_flag[0:0]
+Creating decoders for process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+     1/14: $1\REG_WR[0:0]
+     2/14: $1\ALU_SEL[3:0]
+     3/14: $1\IO_WR[0:0]
+     4/14: $1\IO_RD[0:0]
+     5/14: $1\CLRC_EN[0:0]
+     6/14: $1\SETC_EN[0:0]
+     7/14: $1\BRANCH_EN[0:0]
+     8/14: $1\PC_SEL[2:0]
+     9/14: $1\POP_EN[0:0]
+    10/14: $1\PUSH_EN[0:0]
+    11/14: $1\MEM_SRC[0:0]
+    12/14: $1\MEM_WR[0:0]
+    13/14: $1\MEM_RD[0:0]
+    14/14: $1\IMM_SEL[0:0]
+Creating decoders for process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+     1/1: $0\pc_current[31:0]
+Creating decoders for process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+     1/1: $1\pc_next[31:0]
+
+15.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\REG_FILE.$mem2reg_rd$\regs$/home/user/cpu_project/register.v:42$58_DATA' from process `\REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+No latch inferred for signal `\REG_FILE.$mem2reg_rd$\regs$/home/user/cpu_project/register.v:41$57_DATA' from process `\REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+No latch inferred for signal `\ALU_32.\V_flag' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\Result' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\C_out' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\ALU_32.\Res33' from process `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+No latch inferred for signal `\CONTROL_UNIT.\ALU_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IMM_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\REG_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_RD' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\MEM_SRC' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\PUSH_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\POP_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\PC_SEL' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\BRANCH_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\SETC_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\CLRC_EN' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IO_RD' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\CONTROL_UNIT.\IO_WR' from process `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+No latch inferred for signal `\PROGRAM_COUNTER.\pc_next' from process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+
+15.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\REG_FILE.\i' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$471' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[0]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$474' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[1]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$477' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[2]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$480' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[3]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$483' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[4]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$486' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[5]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$489' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[6]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$492' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.\regs[7]' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$495' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_ADDR' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$498' with positive edge clock and positive level reset.
+Creating register for signal `\REG_FILE.$mem2reg_wr$\regs$/home/user/cpu_project/register.v:36$56_DATA' using process `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+  created $adff cell `$procdff$501' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\N_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$504' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\Z_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$507' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\C_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$510' with positive edge clock and positive level reset.
+Creating register for signal `\FLAGS_REGISTER.\V_flag' using process `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+  created $adff cell `$procdff$513' with positive edge clock and positive level reset.
+Creating register for signal `\PROGRAM_COUNTER.\pc_current' using process `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+  created $adff cell `$procdff$516' with positive edge clock and positive level reset.
+
+15.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+15.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+Removing empty process `REG_FILE.$proc$/home/user/cpu_project/register.v:42$75'.
+Found and cleaned up 1 empty switch in `\REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+Removing empty process `REG_FILE.$proc$/home/user/cpu_project/register.v:41$72'.
+Found and cleaned up 2 empty switches in `\REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+Removing empty process `REG_FILE.$proc$/home/user/cpu_project/register.v:31$59'.
+Found and cleaned up 1 empty switch in `\ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+Removing empty process `ALU_32.$proc$/home/user/cpu_project/alu.v:47$21'.
+Found and cleaned up 3 empty switches in `\FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+Removing empty process `FLAGS_REGISTER.$proc$/home/user/cpu_project/flags_register.v:33$19'.
+Found and cleaned up 1 empty switch in `\CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+Removing empty process `CONTROL_UNIT.$proc$/home/user/cpu_project/control_unit.v:84$78'.
+Removing empty process `PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:44$85'.
+Found and cleaned up 1 empty switch in `\PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+Removing empty process `PROGRAM_COUNTER.$proc$/home/user/cpu_project/program_counter.v:32$82'.
+Cleaned up 10 empty switches.
+
+15.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module CPU_TOP.
+Optimizing module REG_FILE.
+<suppressed ~17 debug messages>
+Optimizing module SIGN_EXTEND.
+Optimizing module ALU_32.
+<suppressed ~5 debug messages>
+Optimizing module FLAGS_REGISTER.
+<suppressed ~4 debug messages>
+Optimizing module CONTROL_UNIT.
+Optimizing module PROGRAM_COUNTER.
+<suppressed ~1 debug messages>
+Optimizing module BRANCH_LOGIC.
+
+16. Executing FLATTEN pass (flatten design).
+Deleting now unused module REG_FILE.
+Deleting now unused module SIGN_EXTEND.
+Deleting now unused module ALU_32.
+Deleting now unused module FLAGS_REGISTER.
+Deleting now unused module CONTROL_UNIT.
+Deleting now unused module PROGRAM_COUNTER.
+Deleting now unused module BRANCH_LOGIC.
+<suppressed ~7 debug messages>
+
+17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \CPU_TOP..
+Removed 19 unused cells and 237 unused wires.
+<suppressed ~113 debug messages>

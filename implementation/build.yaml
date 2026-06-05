@@ -1,0 +1,488 @@
+# ============================================================
+#  BUILD & COMPILATION CONFIGURATION
+#  File    : build.yaml
+#  Desc    : Build system and compilation settings
+# ============================================================
+
+build:
+  name: "CPU_RISC_Build"
+  version: "1.0.0"
+  
+  # Build directories
+  directories:
+    source: "./src"
+    build: "./build"
+    output: "./output"
+    temp: "./build/temp"
+    reports: "./reports"
+    logs: "./build/logs"
+
+# ============================================================
+# BUILD TARGETS
+# ============================================================
+
+targets:
+  
+  # Simulation build
+  simulation:
+    name: "Simulation"
+    description: "Compile for behavioral simulation"
+    enabled: true
+    
+    input_files:
+      - "src/cpu_system.v"
+      - "src/cpu_top.v"
+      - "src/program_counter.v"
+      - "src/branch_logic.v"
+      - "src/flags_register.v"
+      - "src/sign_extend.v"
+      - "src/control_unit.v"
+      - "src/register.v"
+      - "src/alu.v"
+      - "src/instruction_memory.v"
+      - "src/data_memory.v"
+    
+    testbench_files:
+      - "sim/testbench.v"
+      - "sim/test_helpers.v"
+    
+    output:
+      format: "verilog"
+      name: "cpu_sim.v"
+      location: "build/simulation/"
+    
+    compiler:
+      tool: "iverilog"
+      standard: "IEEE 1364-2005"
+      
+      flags:
+        optimization: "-O2"
+        warnings: "-Wall"
+        debug_symbols: "-g"
+      
+      defines:
+        - "SIMULATION=1"
+        - "SIM_TIME=1000000"  # 1000 us in ps
+      
+      include_paths:
+        - "./src"
+        - "./include"
+        - "./sim"
+  
+  # Synthesis (RTL to Netlist)
+  synthesis:
+    name: "Synthesis"
+    description: "Synthesize RTL for FPGA"
+    enabled: true
+    
+    input_files:
+      - "src/cpu_system.v"
+      - "src/cpu_top.v"
+      - "src/program_counter.v"
+      - "src/branch_logic.v"
+      - "src/flags_register.v"
+      - "src/sign_extend.v"
+      - "src/control_unit.v"
+      - "src/register.v"
+      - "src/alu.v"
+      - "src/instruction_memory.v"
+      - "src/data_memory.v"
+    
+    output:
+      format: "netlist"
+      name: "cpu_synth.edf"
+      location: "build/synthesis/"
+    
+    # Vivado synthesis
+    vivado:
+      enabled: true
+      tool: "vivado"
+      part: "xc7a35tcsg324-1"
+      
+      synth_flags:
+        - "-mode out_of_context"
+        - "-retiming"
+        - "-fsm_extraction one_hot"
+        - "-resource_sharing on"
+      
+      optimization_level: 2  # 0-3
+      
+      directives:
+        - "SynthesisStrategyViviado"
+        - "RuntimeOptimized"
+    
+    # Quartus synthesis
+    quartus:
+      enabled: true
+      tool: "quartus"
+      device: "MAX10"
+      
+      synth_flags:
+        - "-synthesis_effort fast"
+      
+      optimization: "balanced"
+    
+    # Yosys synthesis (Open Source)
+    yosys:
+      enabled: true
+      tool: "yosys"
+      
+      script: |
+        read_verilog src/*.v
+        hierarchy -top CPU_SYSTEM
+        proc; opt
+        techmap; opt
+        dfflowmap
+        write_json build/cpu.json
+        write_verilog build/cpu_synth.v
+
+  # Place & Route (P&R)
+  place_route:
+    name: "Place & Route"
+    description: "Place and route synthesized design"
+    enabled: true
+    
+    input_files:
+      - "build/synthesis/cpu_synth.edf"
+      - "constraints/timing.xdc"
+      - "constraints/io.xdc"
+    
+    output:
+      format: "bitstream"
+      name: "cpu.bit"
+      location: "build/place_route/"
+    
+    # Vivado P&R
+    vivado_pnr:
+      enabled: true
+      
+      impl_flags:
+        - "-mode full"
+        - "-directive Performance_Explore"
+      
+      timing_met_requirement: true
+      area_optimization: false
+
+  # Bitstream generation
+  bitstream:
+    name: "Bitstream Generation"
+    description: "Generate FPGA bitstream"
+    enabled: true
+    
+    input_files:
+      - "build/place_route/cpu.dcp"
+    
+    output:
+      format: "bit"
+      name: "cpu_final.bit"
+      location: "build/bitstream/"
+    
+    options:
+      encryption: false
+      compression: true
+
+# ============================================================
+# COMPILATION RULES
+# ============================================================
+
+compilation_rules:
+  
+  # Verilog file compilation
+  verilog:
+    source_extension: ".v"
+    
+    rules:
+      - pattern: "src/*.v"
+        action: "compile"
+        standard: "verilog-2005"
+        
+      - pattern: "sim/*.v"
+        action: "compile"
+        standard: "verilog-2005"
+        condition: "target == simulation"
+
+  # Include file processing
+  include:
+    source_extension: ".vh"
+    rules:
+      - pattern: "include/*.vh"
+        action: "preprocess"
+
+# ============================================================
+# COMPILATION FLOWS
+# ============================================================
+
+compilation_flows:
+  
+  # Simulation flow
+  sim_flow:
+    name: "Simulation Flow"
+    steps:
+      1:
+        name: "Preprocess"
+        tool: "cpp"
+        input: "src/*.v"
+        output: "build/temp/*.pp.v"
+        flags: "-E -nostdinc"
+      
+      2:
+        name: "Compile"
+        tool: "iverilog"
+        input: "build/temp/*.pp.v"
+        output: "build/simulation/cpu_sim.vvp"
+        flags: "-g2009 -Wall"
+      
+      3:
+        name: "Simulate"
+        tool: "vvp"
+        input: "build/simulation/cpu_sim.vvp"
+        output: "reports/sim.vcd"
+        flags: "-v"
+  
+  # Synthesis flow
+  synth_flow:
+    name: "Synthesis Flow"
+    steps:
+      1:
+        name: "Lint"
+        tool: "verilator"
+        input: "src/*.v"
+        flags: "--lint-only -Wall"
+      
+      2:
+        name: "Synthesis"
+        tool: "vivado"
+        input: "src/*.v"
+        output: "build/synthesis/cpu_synth.edf"
+        part: "xc7a35tcsg324-1"
+      
+      3:
+        name: "Place & Route"
+        tool: "vivado"
+        input: "build/synthesis/cpu_synth.edf"
+        output: "build/place_route/cpu.dcp"
+      
+      4:
+        name: "Bitstream"
+        tool: "vivado"
+        input: "build/place_route/cpu.dcp"
+        output: "build/bitstream/cpu.bit"
+
+# ============================================================
+# CONSTRAINTS & TIMING
+# ============================================================
+
+constraints:
+  timing_constraints:
+    file: "constraints/timing.xdc"
+    format: "XDC"
+    
+    clocks:
+      - name: "clk"
+        period: "10 ns"      # 100 MHz
+        duty_cycle: "50%"
+    
+    false_paths: []
+    multicycle_paths: []
+  
+  io_constraints:
+    file: "constraints/io.xdc"
+    format: "XDC"
+    
+    pin_assignments:
+      clk: "E3"
+      rst: "D9"
+      io_addr: "A3,B4,C4,D4,D3,E4,D2,E2"
+      io_wdata: "J5,H5,H6,H7,J7,J6,K6,K7"
+      io_rdata: "L4,L3,M2,L6,M3,L5,M5,M4"
+      io_rd: "A2"
+      io_wr: "B2"
+
+# ============================================================
+# LINTING & VERIFICATION
+# ============================================================
+
+linting:
+  enabled: true
+  tool: "verilator"
+  
+  options:
+    strict_checking: true
+    pedantic: true
+    
+    warnings:
+      enabled:
+        - "ALWCOMBORDER"
+        - "BLKANDNBLK"
+        - "CASEINCOMPLETE"
+        - "UNPACKED"
+      
+      disabled:
+        - "UNOPTFLAT"
+        - "UNUSED"
+
+# ============================================================
+# OPTIMIZATION SETTINGS
+# ============================================================
+
+optimization:
+  
+  # Area optimization
+  area:
+    enabled: true
+    level: "medium"         # low, medium, high
+    techniques:
+      - "constant_propagation"
+      - "dead_code_elimination"
+      - "gate_duplication"
+  
+  # Speed optimization
+  speed:
+    enabled: true
+    level: "medium"
+    target_frequency: "100 MHz"
+    techniques:
+      - "register_balancing"
+      - "pipelining"
+      - "path_optimization"
+  
+  # Power optimization
+  power:
+    enabled: false
+    level: "medium"
+    techniques:
+      - "clock_gating"
+      - "state_encoding"
+
+# ============================================================
+# CLEAN & MAINTAIN
+# ============================================================
+
+clean:
+  # Clean commands
+  temp_files:
+    - "build/temp/*"
+    - "*.swp"
+    - "*.swo"
+    - "*~"
+  
+  build_files:
+    - "build/*"
+    - "output/*"
+    - "work/*"
+  
+  simulation_files:
+    - "*.vcd"
+    - "*.vvp"
+    - "*.wdb"
+  
+  full_clean:
+    - "build/*"
+    - "output/*"
+    - "reports/*"
+
+# ============================================================
+# BUILD SYSTEM
+# ============================================================
+
+build_system:
+  type: "make"              # make, cmake, or scons
+  
+  # Makefile targets
+  makefile:
+    enabled: true
+    file: "Makefile"
+    
+    targets:
+      sim:
+        description: "Run simulation"
+        commands:
+          - "cd build && iverilog -o cpu_sim.vvp ../src/*.v ../sim/testbench.v"
+          - "vvp cpu_sim.vvp"
+      
+      synth:
+        description: "Run synthesis"
+        commands:
+          - "vivado -mode batch -source scripts/synth.tcl"
+      
+      clean:
+        description: "Clean all build artifacts"
+        commands:
+          - "rm -rf build/* output/* work/*"
+
+# ============================================================
+# DEPENDENCY MANAGEMENT
+# ============================================================
+
+dependencies:
+  tools:
+    - name: "iverilog"
+      version: "10.0+"
+      required: true
+    
+    - name: "vivado"
+      version: "2021.2+"
+      required: false
+    
+    - name: "verilator"
+      version: "4.0+"
+      required: false
+  
+  verilog_packages: []
+
+# ============================================================
+# PARALLEL BUILD
+# ============================================================
+
+parallel_build:
+  enabled: true
+  max_jobs: 4
+  
+  # Job scheduling
+  job_slots: 4
+  load_average_limit: 3.0
+
+# ============================================================
+# BUILD REPORTING
+# ============================================================
+
+reporting:
+  enabled: true
+  
+  reports:
+    - type: "Build Summary"
+      file: "reports/build_summary.txt"
+    
+    - type: "Utilization Report"
+      file: "reports/utilization.txt"
+    
+    - type: "Timing Report"
+      file: "reports/timing.txt"
+    
+    - type: "Power Report"
+      file: "reports/power.txt"
+  
+  # Email notification
+  email_notification:
+    enabled: false
+    on_success: false
+    on_failure: true
+    recipients:
+      - "team@risc.dev"
+
+# ============================================================
+# VERSION CONTROL INTEGRATION
+# ============================================================
+
+version_control:
+  system: "git"
+  
+  # Pre-build checks
+  pre_build_checks:
+    - "check_uncommitted_changes"
+    - "update_version_info"
+  
+  # Post-build updates
+  post_build:
+    - "tag_release"
+    - "update_changelog"

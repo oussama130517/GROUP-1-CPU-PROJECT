@@ -1,0 +1,294 @@
+# ============================================================
+#  CPU RISC PROCESSOR - PROJECT CONFIGURATION
+#  File    : project.yaml
+#  Desc    : Main project configuration and metadata
+# ============================================================
+
+project:
+  name: "32-Bit RISC Processor (Harvard Architecture)"
+  version: "1.0.0"
+  author: "RISC Architecture Team"
+  description: |
+    Single-cycle 32-bit RISC processor with Harvard architecture
+    and Von Neumann fetch-execute cycle. Implements complete
+    datapath with control unit, ALU, and memory hierarchy.
+  
+  license: "MIT"
+  created: "2024-2025"
+  language: "Verilog"
+  standard: "IEEE 1364-2005"
+
+# Project structure
+directory_structure:
+  root: "./"
+  source: "./src/"
+  sim: "./sim/"
+  synth: "./synth/"
+  reports: "./reports/"
+  docs: "./docs/"
+  
+# Design specifications
+design:
+  architecture: "Harvard (separate IMEM/DMEM)"
+  execution_type: "Single-Cycle"
+  word_width: 32          # bits
+  address_width: 32       # bits
+  register_count: 8       # R0-R7
+  register_width: 32      # bits each
+  imem_size: 256          # words (1K bytes)
+  dmem_size: 256          # words (1K bytes)
+  total_memory: "8 KB"
+  
+  instruction_formats:
+    - name: "R-Type (Register)"
+      format: "[31:26]Opcode [25:23]Rs1 [22:20]Rs2 [19:17]Rd [16:0]unused"
+    
+    - name: "I-Type (Immediate)"
+      format: "[31:26]Opcode [25:23]Rs1 [22:20]Rs2 [19:17]Rd [15:0]Immediate"
+
+# Supported operations
+operations:
+  arithmetic:
+    - ADD
+    - SUB
+    - NEG
+    - INC
+    - DEC
+  
+  logic:
+    - AND
+    - OR
+    - XOR
+    - NOT
+  
+  shift_rotate:
+    - RLC  # Rotate Left through Carry
+    - RRC  # Rotate Right through Carry
+  
+  carry_control:
+    - SETC # Set Carry
+    - CLRC # Clear Carry
+  
+  branch_jump:
+    - JMP   # Unconditional Jump
+    - JN    # Jump if Negative
+    - JC    # Jump if Carry
+    - JV    # Jump if Overflow
+    - JZ    # Jump if Zero
+    - LOOP  # Decrement and Loop
+    - CALL  # Call Subroutine
+    - RET   # Return from Subroutine
+    - RTI   # Return from Interrupt
+  
+  memory:
+    - LDM   # Load from Memory (immediate address)
+    - LDD   # Load from Memory (register address)
+    - STD   # Store to Memory
+    - LDI   # Load Immediate
+    - STI   # Store with Immediate address
+  
+  stack:
+    - PUSH  # Push to Stack
+    - POP   # Pop from Stack
+  
+  io:
+    - IN    # Input from I/O
+    - OUT   # Output to I/O
+
+# Flags register (4 bits)
+flags:
+  N:      # Negative flag
+    desc: "Set when ALU result is negative"
+  Z:      # Zero flag
+    desc: "Set when ALU result is zero"
+  C:      # Carry flag
+    desc: "Set on carry from ALU or rotate"
+  V:      # Overflow flag
+    desc: "Set on signed overflow"
+
+# Module list
+modules:
+  core:
+    - name: "CPU_TOP"
+      file: "cpu_top.v"
+      type: "Core Processor"
+      description: "Complete processor with all components"
+  
+  components:
+    - name: "PROGRAM_COUNTER"
+      file: "program_counter.v"
+      type: "Sequential"
+      description: "PC register with next-address MUX"
+    
+    - name: "CONTROL_UNIT"
+      file: "control_unit.v"
+      type: "Combinational"
+      description: "Instruction decoder"
+    
+    - name: "REGISTER_FILE"
+      file: "register.v"
+      type: "Sequential"
+      description: "8x32-bit register array"
+    
+    - name: "ALU_32"
+      file: "alu.v"
+      type: "Combinational"
+      description: "32-bit Arithmetic Logic Unit"
+    
+    - name: "FLAGS_REGISTER"
+      file: "flags_register.v"
+      type: "Sequential"
+      description: "4-bit flags storage (N,Z,C,V)"
+    
+    - name: "BRANCH_LOGIC"
+      file: "branch_logic.v"
+      type: "Combinational"
+      description: "Branch target calculation"
+    
+    - name: "SIGN_EXTEND"
+      file: "sign_extend.v"
+      type: "Combinational"
+      description: "16-to-32 bit sign extension"
+  
+  memory:
+    - name: "INSTRUCTION_MEMORY"
+      file: "instruction_memory.v"
+      type: "ROM/RAM"
+      capacity: "256x32"
+      description: "Program storage"
+    
+    - name: "DATA_MEMORY"
+      file: "data_memory.v"
+      type: "Dual-Port RAM"
+      capacity: "256x32"
+      description: "Data/Stack storage"
+
+# System hierarchy
+system_hierarchy:
+  CPU_SYSTEM:
+    CPU_TOP:
+      - PROGRAM_COUNTER
+      - BRANCH_LOGIC
+      - CONTROL_UNIT
+      - REGISTER_FILE
+      - ALU_32
+      - FLAGS_REGISTER
+      - SIGN_EXTEND
+      - INSTRUCTION_MEMORY
+      - DATA_MEMORY
+
+# Compilation settings
+compilation:
+  verilog_standard: "IEEE 1364-2005"
+  timescale: "1ns/1ps"
+  
+  simulators:
+    iverilog:
+      enabled: true
+      version: "v10.0+"
+      flags: "-g2009"
+    
+    modelsim:
+      enabled: true
+      version: "2021.4+"
+      flags: "-sv_std sv2017"
+    
+    xsim:
+      enabled: true
+      version: "2021.2+"
+
+# Simulation settings
+simulation:
+  default_duration: "1000 ns"
+  clock_period: "10 ns"
+  clock_duty_cycle: "50%"
+  reset_duration: "100 ns"
+  
+  waveform_format: "VCD"
+  waveform_file: "simulation.vcd"
+  
+  coverage:
+    code: true
+    functional: true
+    assertion: false
+
+# Synthesis settings
+synthesis:
+  tools:
+    vivado:
+      enabled: true
+      device: "Artix-7"
+      package: "csg324"
+      speed_grade: "-1"
+    
+    quartus:
+      enabled: true
+      device: "MAX10"
+      family: "MAX 10"
+    
+    yosys:
+      enabled: true
+      version: "0.9+"
+
+# Constraints and timing
+constraints:
+  clock:
+    period: "10 ns"        # 100 MHz
+    duty_cycle: "50%"
+    skew: "< 0.5 ns"
+  
+  power:
+    max_static: "100 mW"
+    max_dynamic: "500 mW"
+
+# Testing and verification
+testing:
+  simulation_suites:
+    - name: "Unit Tests"
+      path: "sim/unit_tests/"
+    
+    - name: "Integration Tests"
+      path: "sim/integration_tests/"
+    
+    - name: "Functional Tests"
+      path: "sim/functional_tests/"
+  
+  code_coverage_target: "90%"
+  assertion_checking: true
+
+# Documentation
+documentation:
+  format: "Markdown"
+  location: "./docs/"
+  includes:
+    - "ARCHITECTURE_DOCUMENTATION.md"
+    - "IMPLEMENTATION_SUMMARY.md"
+    - "API_REFERENCE.md"
+    - "TESTING_GUIDE.md"
+
+# Build targets
+build_targets:
+  sim:
+    description: "Compile and simulate"
+    command: "make sim"
+  
+  synth:
+    description: "Synthesis for FPGA"
+    command: "make synth"
+  
+  clean:
+    description: "Clean build artifacts"
+    command: "make clean"
+
+# Version control
+version_control:
+  system: "git"
+  repository: "github.com/risc-cpu/32bit-processor"
+  main_branch: "main"
+  develop_branch: "develop"
+
+# Contributors
+contributors:
+  - name: "RISC Architecture Team"
+    email: "team@risc.dev"
+    role: "Developer"
