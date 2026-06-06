@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/LENOVO User/Downloads/cpu/data_memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DATA_MEMORY
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [C:/Users/LENOVO User/Downloads/cpu/data_memory.v:40]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/LENOVO User/data_memory/data_memory.srcs/sim_1/new/test_datamem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_dmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/LENOVO User/data_memory/data_memory.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
